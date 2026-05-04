@@ -1,4 +1,7 @@
 import React from 'react';
+import tvUnitImg from "../assets/tvunit.avif";
+import partitionImg from "../assets/Partition.webp";
+import wardrobeImg from "../assets/wardrobe2.avif";
 
 const Projects = () => {
   return (
@@ -19,48 +22,51 @@ const Projects = () => {
           
           {/* Project Item */}
           <div className="group relative overflow-hidden rounded-3xl shadow-lg">
-            <img 
-              src="https://images.unsplash.com/photo-1600585154340-be6161a56a9c?q=80&w=2070" 
-              alt="Wardrobe"
-              className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
-            
-            <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-              <h3 className="text-white text-2xl font-semibold">Wardrobe</h3>
-              <p className="text-white/80 text-sm mt-1">Custom Storage Solutions</p>
-            </div>
-          </div>
+  <img 
+    src={wardrobeImg}
+    alt="Wardrobe"
+    className="w-full h-80 object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-90"
+  />
+
+  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+  
+  <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+    <h3 className="text-white text-2xl font-semibold">Wardrobe</h3>
+    <p className="text-white/80 text-sm mt-1">Custom Storage Solutions</p>
+  </div>
+</div>
 
           {/* Project Item 2 */}
-          <div className="group relative overflow-hidden rounded-3xl shadow-lg">
-            <img 
-              src="https://images.unsplash.com/photo-1618221195710-dd5b8c4c8e9a?q=80&w=2070" 
-              alt="Hall Partition"
-              className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
-            
-            <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-              <h3 className="text-white text-2xl font-semibold">Hall Partition</h3>
-              <p className="text-white/80 text-sm mt-1">Modern Space Divider</p>
-            </div>
-          </div>
+         <div className="group relative overflow-hidden rounded-3xl shadow-lg">
+  <img 
+    src={partitionImg}
+    alt="Hall Partition"
+    className="w-full h-80 object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-90"
+  />
+
+  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+  
+  <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+    <h3 className="text-white text-2xl font-semibold">Hall Partition</h3>
+    <p className="text-white/80 text-sm mt-1">Modern Space Divider</p>
+  </div>
+</div>
 
           {/* Project Item 3 */}
           <div className="group relative overflow-hidden rounded-3xl shadow-lg">
-            <img 
-              src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=2070" 
-              alt="TV Unit"
-              className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
-            
-            <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-              <h3 className="text-white text-2xl font-semibold">TV Unit</h3>
-              <p className="text-white/80 text-sm mt-1">Elegant Entertainment Center</p>
-            </div>
-          </div>
+  <img 
+    src={tvUnitImg}
+    alt="TV Unit"
+    className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
+  />
+
+  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+  
+  <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+    <h3 className="text-white text-2xl font-semibold">TV Unit</h3>
+    <p className="text-white/80 text-sm mt-1">Elegant Entertainment Center</p>
+  </div>
+</div>
 
           {/* You can add more items as needed */}
           <div className="group relative overflow-hidden rounded-3xl shadow-lg">

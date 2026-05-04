@@ -35,23 +35,23 @@ const Contact = () => {
         'Salem', 'Namakkal', 'Coimbatore'
     ];
 
-    const branches = [
-        {
-            name: 'Bangalore Branch',
-            address: 'No-19, Nageshwar Rao Garden, Kalacipalaya, Bengaluru, Karnataka',
-            phone: '+91 77604 08660',
-            email: 'venkateshinterior2025@gmail.com'
-        },
-        {
-            name: 'Tumkur Branch',
-            address: 'Tumkur Kunigal Main Road, Maraluru Ward No. 29, Opposite BSNL Quarters, Tumakuru - 572105',
-            phone: '+91 77604 08660',
-            email: 'venkateshinterior2025@gmail.com'
-        }
-    ];
+   const branches = [
+  {
+    name: 'ABC Branch',
+    address: 'No. 123, XYZ Street, Area 1, City A - 600001',
+    phone: '+91 90000 00001',
+    email: 'abc@company.com'
+  },
+  {
+    name: 'XYZ Branch',
+    address: 'No. 456, Main Road, Area 2, City B - 600002',
+    phone: '+91 90000 00002',
+    email: 'xyz@company.com'
+  }
+];
 
     return (
-        <section className="relative py-20 overflow-hidden bg-gradient-to-br from-gray-50 via-white to-gray-50">
+       <section className="relative py-20 overflow-hidden bg-[#FDFCEB]">
             {/* Animated Background */}
             <div className="absolute inset-0 overflow-hidden">
                 <div className="absolute top-20 right-10 w-72 h-72 bg-[#C3B091]/5 rounded-full blur-3xl animate-pulse"></div>
@@ -61,7 +61,7 @@ const Contact = () => {
             <div className="relative max-w-7xl mx-auto px-6">
                 {/* Modern Header */}
                 <div className="text-center mb-12">
-                    <div className="inline-flex items-center gap-2 bg-[#C3B091]/10 px-5 py-2 rounded-full mb-6 mt-4 relative z-10">
+                    <div className="inline-flex items-center gap-2 bg-[#C3B091]/10 px-5 py-2 rounded-full mb-6 mt-10 relative z-10">
                         <MessageCircle className="w-4 h-4 text-[#C3B091]" />
                         <span className="font-semibold tracking-wider text-sm text-[#C3B091] uppercase">
                             Let's Connect
@@ -90,7 +90,7 @@ const Contact = () => {
                         <div className="group relative bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500">
                             <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#C3B091]/10 to-transparent rounded-bl-[100px]"></div>
 
-                            <div className="relative p-6">
+                            <div className="relative p-6 bg-black/5">
                                 <div className="flex items-center gap-2 mb-5">
                                     <div className="p-2 bg-[#C3B091]/10 rounded-xl">
                                         <Compass className="w-5 h-5 text-[#C3B091]" />
@@ -178,7 +178,7 @@ const Contact = () => {
                             {/* Decorative Top Bar */}
                             <div className="h-2 bg-gradient-to-r from-[#C3B091] via-[#D4C5A8] to-[#C3B091]"></div>
 
-                            <div className="p-8">
+                            <div className="p-8 bg-black/5">
                                 <div className="text-center mb-6">
                                     <h3 className="text-2xl font-bold text-gray-900">Send us a Message</h3>
                                     <p className="text-gray-500 text-sm mt-1">We'll get back to you within 24 hours</p>
@@ -270,16 +270,19 @@ const Contact = () => {
                     </div>
 
                     {/* Right Column - Contact Info & Branches */}
-                    <div className="lg:col-span-3 space-y-6">
+                    <div className="lg:col-span-3 space-y-6 ">
                         {/* Emergency Contact */}
-                        <div className="bg-white rounded-3xl p-6 shadow-xl text-center">
+                        <div className="bg-white rounded-3xl p-6 shadow-xl text-center bg-black/5">
                             <div className="w-16 h-16 bg-[#C3B091]/10 rounded-full flex items-center justify-center mx-auto mb-4">
                                 <Phone className="w-8 h-8 text-[#C3B091]" />
                             </div>
                             <h4 className="text-sm font-semibold text-gray-500 mb-1">Emergency Contact</h4>
-                            <a href="tel:+917760408660" className="text-2xl font-bold text-gray-900 hover:text-[#C3B091] transition-colors">
-                                +91 77604 08660
-                            </a>
+                            <a 
+  href="tel:+919000000001" 
+  className="text-2xl font-bold text-gray-900 hover:text-[#C3B091] transition-colors"
+>
+  +91 90000 00001
+</a>
                             <p className="text-xs text-gray-400 mt-2">24/7 Support Available</p>
                         </div>
 

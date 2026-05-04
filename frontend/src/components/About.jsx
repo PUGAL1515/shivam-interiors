@@ -4,85 +4,78 @@ import aboutImage from '../assets/image.png';
 
 const About = () => {
   return (
-    <section id="about" className="py-10 bg-white">   {/* Reduced padding */}
+    <section id="about" className="pt-8 pb-20 bg-[#FDFCEB] text-[#1A1A1A] relative overflow-hidden">
       <div className="max-w-6xl mx-auto px-6">
         
-        {/* Section Title - Compact */}
-        <div className="text-center mb-12">
-          <span className="text-[#C3B091] font-medium tracking-widest text-sm">OUR STORY</span>
-          <h2 className="text-4xl font-bold text-gray-900 mt-2">
-            About Shivam UPVC Interiors
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <span className="text-[#C3B091] font-medium tracking-[3px] text-sm">OUR STORY</span>
+          <h2 className="text-5xl md:text-6xl font-bold mt-4 tracking-tight text-[#1A1A1A]">
+            Crafting Timeless Homes<br />
+            <span className="text-[#C3B091]">Since 2016</span>
           </h2>
-          <div className="w-16 h-1 bg-[#C3B091] mx-auto mt-4"></div>
+          <div className="w-20 h-1 bg-[#C3B091] mx-auto mt-6"></div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-10 lg:gap-14 items-center">   {/* Reduced gap */}
+        <div className="grid md:grid-cols-2 gap-16 lg:gap-20 items-center">
           
-          {/* Left Side - Text */}
-          <div className="space-y-6">   {/* Reduced spacing */}
-            <div className="prose prose-base text-gray-700">
-              <p className="text-lg leading-relaxed">
-                <span className="font-semibold text-[#C3B091]">Shivam UPVC Interiors</span> is a trusted premium interior company 
-                specializing in UPVC False Ceilings, PVC Wall Paneling, SPC Flooring & modern interiors.
-              </p>
-
+          {/* Left - Content */}
+          <div className="space-y-8">
+            <div className="space-y-6 text-lg leading-relaxed text-[#1A1A1A]/90">
               <p>
-                With extensive experience, we transform ordinary spaces into elegant and functional environments 
-                using quality materials and expert craftsmanship.
+                <span className="font-semibold text-[#C3B091]">Shivam UPVC Interiors</span> is a trusted name in premium interior solutions. 
+                We specialize in transforming ordinary spaces into luxurious, functional homes using high-quality UPVC, PVC, and SPC materials.
+              </p>
+              <p>
+                With a passion for craftsmanship and attention to every detail, we deliver elegant interiors that stand the test of time.
               </p>
             </div>
 
-            {/* Highlights - More Compact */}
-            <div className="grid grid-cols-2 gap-5 pt-4">
-              <div className="flex gap-3">
-                <div className="w-8 h-8 rounded-full bg-[#C3B091]/10 flex items-center justify-center text-xl flex-shrink-0">
-                  🏠
-                </div>
-                <div>
-                  <h4 className="font-semibold text-gray-900 text-base">Expert Craftsmanship</h4>
-                  <p className="text-sm text-gray-600">Premium materials & precision</p>
-                </div>
+            {/* Highlights */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="group bg-white hover:bg-[#F5F0E8] border border-[#C3B091]/20 hover:border-[#C3B091]
+                            p-7 rounded-3xl transition-all duration-500 hover:-translate-y-2">
+                <div className="text-4xl mb-4">🏠</div>
+                <h4 className="font-semibold text-xl mb-2 text-[#C3B091]">Expert Craftsmanship</h4>
+                <p className="text-[#1A1A1A]/70">Premium materials and precision installation</p>
               </div>
 
-              <div className="flex gap-3">
-                <div className="w-8 h-8 rounded-full bg-[#C3B091]/10 flex items-center justify-center text-xl flex-shrink-0">
-                  ⭐
-                </div>
-                <div>
-                  <h4 className="font-semibold text-gray-900 text-base">Client Focused</h4>
-                  <p className="text-sm text-gray-600">Personalized service</p>
-                </div>
+              <div className="group bg-white hover:bg-[#F5F0E8] border border-[#C3B091]/20 hover:border-[#C3B091]
+                            p-7 rounded-3xl transition-all duration-500 hover:-translate-y-2">
+                <div className="text-4xl mb-4">⭐</div>
+                <h4 className="font-semibold text-xl mb-2 text-[#C3B091]">Client First</h4>
+                <p className="text-[#1A1A1A]/70">Personalized designs and exceptional service</p>
               </div>
             </div>
 
-            <div className="pt-4">
-              <button className="bg-[#C3B091] hover:bg-[#A67C5D] text-white px-8 py-3 rounded-full font-medium text-sm transition-all">
-                Know More About Us
-              </button>
-            </div>
+            <button className="mt-6 bg-[#C3B091] hover:bg-[#1A1A1A] text-white px-10 py-4 rounded-2xl font-semibold
+                             transition-all duration-300 hover:scale-105 shadow-lg">
+              Know More About Us
+            </button>
           </div>
 
-          {/* Right Side - Image (Minimized) */}
-          <div className="relative">
-            <div className="aspect-video rounded-2xl overflow-hidden shadow-xl">   {/* Changed to aspect-video for smaller height */}
-              <img 
-                src={aboutImage} 
-                alt="Shivam UPVC Interiors"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+          {/* Right - Image */}
+          <div className="relative group">
+            <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border border-[#C3B091]/10">
+              <img
+                src={aboutImage}
+                alt="Shivam Interiors Project"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
             </div>
 
-            {/* Small Accent Box */}
-            <div className="absolute -bottom-5 -left-5 bg-white px-5 py-4 rounded-xl shadow-lg border border-[#EDE4D9]">
-              <div className="flex items-center gap-3">
-                <img 
-                  src={sivamLogo} 
-                  alt="Logo" 
-                  className="h-9 w-auto"
+            {/* Floating Accent Card */}
+            <div className="absolute -bottom-6 -left-6 bg-white text-black p-6 rounded-3xl shadow-2xl border border-[#C3B091]/30 
+                          transition-all duration-500 group-hover:-translate-y-3">
+              <div className="flex items-center gap-4">
+                <img
+                  src={sivamLogo}
+                  alt="Logo"
+                  className="h-12 w-auto"
                 />
-                <div className="text-sm">
-                  <p className="font-semibold text-gray-900">Shivam UPVC</p>
-                  <p className="text-[#C3B091]">Interiors</p>
+                <div>
+                  <p className="font-bold text-xl tracking-tight">SHIVAM</p>
+                  <p className="text-[#C3B091] -mt-1">UPVC INTERIORS</p>
                 </div>
               </div>
             </div>

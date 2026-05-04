@@ -1,105 +1,123 @@
 import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom";   // ← Added
-import { Menu, X } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
+import { Menu, X, Phone } from "lucide-react";
 import sivamLogo from "../assets/sivam-interior-logo.jpeg";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
-  const location = useLocation();   // ← To highlight active page
+  const location = useLocation();
 
   const isActive = (path) => location.pathname === path;
 
   return (
-    <nav className="fixed w-full top-0 bg-[#C3B091] z-50 shadow-lg">
-      <div className="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+    <nav className="fixed w-full top-0 z-50 bg-[#1A1A1A] text-white border-b border-[#FDFCEB]/10">
+      <div className="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
 
         {/* Logo */}
-        <div className="relative">
-          <div className="bg-white px-4 py-3 rounded-2xl shadow-lg border border-[#EDE4D9] flex items-center gap-3">
-            <img 
-              src={sivamLogo} 
-              alt="Shivam UPVC Interiors Logo"
-              className="h-9 w-auto object-contain"
-            />
-            <div className="text-xs leading-tight hidden sm:block">
-              <p className="font-bold text-gray-900 tracking-tight">SHIVAM UPVC</p>
-              <p className="text-[#C3B091] font-medium">INTERIORS</p>
-            </div>
-          </div>
-        </div>
+       <Link to="/" className="flex items-center gap-3 group">
+  <div className="bg-white p-3.5 rounded-[28px] shadow-md overflow-hidden">
+    <img
+      src={sivamLogo}
+      alt="Shivam Interiors"
+      className="h-12 w-auto object-contain transform scale-150"
+    />
+  </div>
+  <div>
+    <p className="text-2xl font-bold tracking-tighter text-white">SHIVAM</p>
+    <p className="text-sm -mt-1 text-[#FDFCEB] font-medium tracking-[2px]">INTERIORS</p>
+  </div>
+</Link>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex gap-9 text-white/95 text-lg font-medium">
+        <ul className="hidden md:flex items-center gap-10 text-sm uppercase tracking-widest font-medium">
           <li>
-            <Link 
-              to="/" 
-              className={`relative group transition-all duration-300 ${isActive('/') ? 'text-white font-semibold' : 'hover:text-white'}`}
+            <Link
+              to="/"
+              className={`hover:text-[#FDFCEB] transition-all ${isActive('/') ? 'text-[#FDFCEB] font-semibold' : ''}`}
             >
-              Home
-              <span className={`absolute -bottom-1 left-0 h-0.5 bg-white transition-all duration-300 ${isActive('/') ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
+              HOME
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/services"
+              className={`hover:text-[#FDFCEB] transition-all ${isActive('/services') ? 'text-[#FDFCEB] font-semibold' : ''}`}
+            >
+              SERVICES
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/projects"
+              className={`hover:text-[#FDFCEB] transition-all ${isActive('/projects') ? 'text-[#FDFCEB] font-semibold' : ''}`}
+            >
+              PROJECTS
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/about"
+              className={`hover:text-[#FDFCEB] transition-all ${isActive('/about') ? 'text-[#FDFCEB] font-semibold' : ''}`}
+            >
+              ABOUT
             </Link>
           </li>
 
+          {/* ✅ NEW CONTACT MENU */}
           <li>
-            <Link 
-              to="/services" 
-              className={`relative group transition-all duration-300 ${isActive('/services') ? 'text-white font-semibold' : 'hover:text-white'}`}
+            <Link
+              to="/contact"
+              className={`hover:text-[#FDFCEB] transition-all ${isActive('/contact') ? 'text-[#FDFCEB] font-semibold' : ''}`}
             >
-              Services
-              <span className={`absolute -bottom-1 left-0 h-0.5 bg-white transition-all duration-300 ${isActive('/services') ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
-            </Link>
-          </li>
-
-          
-
-          <li>
-            <Link 
-              to="/contact" 
-              className={`relative group transition-all duration-300 ${isActive('/contact') ? 'text-white font-semibold' : 'hover:text-white'}`}
-            >
-              Contact
-              <span className={`absolute -bottom-1 left-0 h-0.5 bg-white transition-all duration-300 ${isActive('/contact') ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
+              CONTACT
             </Link>
           </li>
         </ul>
 
-        {/* CTA Button */}
-        <button className="hidden md:block bg-white text-[#C3B091] hover:bg-[#F5F0E8] 
-                         px-7 py-3 rounded-full font-semibold text-sm tracking-wider 
-                         transition-all duration-300 hover:shadow-xl hover:scale-105">
-          GET FREE QUOTE
-        </button>
+        {/* Right Side */}
+        <div className="flex items-center gap-6">
 
-        {/* Mobile Hamburger */}
-        <div className="md:hidden text-white">
-          {open ? (
-            <X 
-              size={28} 
-              onClick={() => setOpen(false)} 
-              className="cursor-pointer hover:text-white/80 transition" 
-            />
-          ) : (
-            <Menu 
-              size={28} 
-              onClick={() => setOpen(true)} 
-              className="cursor-pointer hover:text-white/80 transition" 
-            />
-          )}
+          {/* Phone */}
+          <a
+            href="tel:+919876543210"
+            className="hidden md:flex items-center gap-2 text-gray-300 hover:text-[#FDFCEB] transition-colors"
+          >
+            <Phone size={18} />
+            <span className="text-sm font-medium">+91 90000 00001</span>
+          </a>
+
+          {/* CTA Button */}
+          <Link to="/contact">
+            <button className="bg-[#FDFCEB] hover:bg-white text-[#1A1A1A] font-semibold px-8 py-3.5 rounded-2xl text-sm tracking-widest transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5">
+              GET FREE QUOTE
+            </button>
+          </Link>
+
+          {/* Mobile Hamburger */}
+          <button
+            className="md:hidden text-white p-2 hover:text-[#FDFCEB]"
+            onClick={() => setOpen(!open)}
+          >
+            {open ? <X size={28} /> : <Menu size={28} />}
+          </button>
         </div>
       </div>
 
       {/* Mobile Menu */}
       {open && (
-        <div className="md:hidden bg-[#C3B091] border-t border-white/20">
-          <div className="px-6 py-8 flex flex-col gap-6 text-base text-white">
-            <Link to="/" onClick={() => setOpen(false)} className="font-semibold">Home</Link>
-            <Link to="/services" onClick={() => setOpen(false)} className="hover:text-white/70 transition">Services</Link>
-            <Link to="/projects" onClick={() => setOpen(false)} className="hover:text-white/70 transition">Projects</Link>
-            <Link to="/contact" onClick={() => setOpen(false)} className="hover:text-white/70 transition">Contact</Link>
-            
-            <button className="mt-4 bg-white text-[#C3B091] py-3.5 rounded-full font-semibold text-base w-full">
-              GET FREE QUOTE
-            </button>
+        <div className="md:hidden bg-[#1A1A1A] border-t border-[#FDFCEB]/20">
+          <div className="px-6 py-10 flex flex-col gap-6 text-lg font-medium">
+            <Link to="/" onClick={() => setOpen(false)}>Home</Link>
+            <Link to="/services" onClick={() => setOpen(false)}>Services</Link>
+            <Link to="/projects" onClick={() => setOpen(false)}>Projects</Link>
+            <Link to="/about" onClick={() => setOpen(false)}>About</Link>
+
+            {/* ✅ CONTACT ADDED */}
+            <Link to="/contact" onClick={() => setOpen(false)}>Contact</Link>
+
+            <a href="tel:+919876543210" className="flex items-center gap-3 text-[#FDFCEB] mt-6">
+              <Phone size={22} /> +91 98765 43210
+            </a>
           </div>
         </div>
       )}

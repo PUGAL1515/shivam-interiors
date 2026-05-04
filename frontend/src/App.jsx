@@ -6,7 +6,10 @@ import Footer from "./components/Footer";
 import Home from "./components/Home";
 import Contact from "./components/Contact";
 import SocialIcons from "./components/SocialMediaIcons";
-import ServicePage from './components/ServicePage';
+
+import ServicePage from './pages/ServicePage';
+import ProjectsPage from './pages/Projectspage';
+import AboutPage from './pages/AboutPage';   // ✅ ADD THIS
 
 function App() {
   return (
@@ -15,7 +18,7 @@ function App() {
         
         <Navbar />
 
-        {/* 🔥 GLOBAL SOCIAL ICONS (VISIBLE ON ALL PAGES) */}
+        {/* GLOBAL SOCIAL ICONS */}
         <SocialIcons />
 
         <main className="flex-1">
@@ -23,6 +26,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/services" element={<ServicePage />} />
+            <Route path="/projects" element={<ProjectsPage />} />
+            <Route path="/about" element={<AboutPage />} /> {/* ✅ ADD THIS */}
           </Routes>
         </main>
 
