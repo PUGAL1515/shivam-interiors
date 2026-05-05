@@ -81,10 +81,13 @@ const Footer = () => {
                         <h3 className="text-white text-xl font-semibold mb-5">Contact Info</h3>
 
                         <div className="space-y-6 text-sm">
+                            {/* Address Section */}
                             <div className="flex gap-3">
-                                <MapPin size={18} className="mt-1 text-[#C3B091]" />
-                                <p className="text-gray-400">
-                                    XYZ, Tamil Nadu, India
+                                <MapPin size={18} className="mt-1 text-[#C3B091] flex-shrink-0" />
+                                <p className="text-gray-400 leading-relaxed">
+                                    92, Arcot Rd, Opp CMC OPD Gate,<br />
+                                    Kagithapatarai, Vellore,<br />
+                                    Tamil Nadu 632012, India
                                 </p>
                             </div>
 

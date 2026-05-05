@@ -25,33 +25,22 @@ const Contact = () => {
         setIsSubmitting(false);
     };
 
-    const karnatakaCities = [
-        'Bangalore', 'Nelamangala', 'Tumkur', 'Sira',
-        'Hiriyur', 'Chitradurga', 'Chamarajnagar'
+   const tamilNaduCities = [
+        'Vellore', 'City 02', 'City 03', 'City 04', 'City 05',
+        'City 06', 'City 07', 'City 08'
     ];
 
-    const tamilNaduCities = [
-        'Hosur', 'Krishnagiri', 'Dharmapuri',
-        'Salem', 'Namakkal', 'Coimbatore'
+    const branches = [
+        {
+            name: 'Sivam Interiors - Vellore',
+            address: '92, Arcot Rd, Opp CMC OPD Gate, Kagithapatarai, Vellore, Tamil Nadu 632012',
+            phone: '+91 XXXXXXXXXX', // Replace with actual number
+            email: 'info@sivaminteriors.com' // Replace with actual email
+        }
     ];
-
-   const branches = [
-  {
-    name: 'ABC Branch',
-    address: 'No. 123, XYZ Street, Area 1, City A - 600001',
-    phone: '+91 90000 00001',
-    email: 'abc@company.com'
-  },
-  {
-    name: 'XYZ Branch',
-    address: 'No. 456, Main Road, Area 2, City B - 600002',
-    phone: '+91 90000 00002',
-    email: 'xyz@company.com'
-  }
-];
 
     return (
-       <section className="relative py-20 overflow-hidden bg-[#FDFCEB]">
+        <section className="relative py-20 overflow-hidden bg-[#FDFCEB]">
             {/* Animated Background */}
             <div className="absolute inset-0 overflow-hidden">
                 <div className="absolute top-20 right-10 w-72 h-72 bg-[#C3B091]/5 rounded-full blur-3xl animate-pulse"></div>
@@ -77,7 +66,7 @@ const Contact = () => {
                     </h2>
 
                     <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-                        Share your vision with us, and let's create something extraordinary together
+                        Share your vision with Sivam Interiors, and let's create something extraordinary together
                     </p>
                 </div>
 
@@ -102,21 +91,6 @@ const Contact = () => {
                                     <div>
                                         <div className="flex items-center gap-2 mb-2">
                                             <MapPin className="w-3.5 h-3.5 text-[#C3B091]" />
-                                            <span className="text-sm font-semibold text-gray-700">Karnataka</span>
-                                        </div>
-                                        <div className="grid grid-cols-2 gap-1.5 ml-5">
-                                            {karnatakaCities.map((city, idx) => (
-                                                <div key={idx} className="flex items-center gap-1.5">
-                                                    <div className="w-1 h-1 rounded-full bg-[#C3B091]/60"></div>
-                                                    <span className="text-xs text-gray-600">{city}</span>
-                                                </div>
-                                            ))}
-                                        </div>
-                                    </div>
-
-                                    <div>
-                                        <div className="flex items-center gap-2 mb-2">
-                                            <MapPin className="w-3.5 h-3.5 text-[#C3B091]" />
                                             <span className="text-sm font-semibold text-gray-700">Tamil Nadu</span>
                                         </div>
                                         <div className="grid grid-cols-2 gap-1.5 ml-5">
@@ -128,6 +102,8 @@ const Contact = () => {
                                             ))}
                                         </div>
                                     </div>
+
+                            
                                 </div>
 
                                 <div className="mt-5 pt-4 border-t border-gray-100">
@@ -153,14 +129,14 @@ const Contact = () => {
                         <div className="bg-gradient-to-br from-[#C3B091] to-[#D4C5A8] rounded-3xl p-6 text-white shadow-xl">
                             <div className="flex items-center gap-2 mb-4">
                                 <Sparkles className="w-5 h-5" />
-                                <h3 className="font-bold text-lg">Why Choose Us?</h3>
+                                <h3 className="font-bold text-lg">Why Choose Sivam Interiors?</h3>
                             </div>
                             <div className="space-y-3">
                                 {[
                                     '15+ Years of Excellence',
                                     '500+ Successful Projects',
                                     'Expert Design Team',
-                                    'Quality Materials',
+                                    'Premium Materials',
                                     'On-Time Delivery'
                                 ].map((item, idx) => (
                                     <div key={idx} className="flex items-center gap-2 text-sm">
@@ -172,10 +148,9 @@ const Contact = () => {
                         </div>
                     </div>
 
-                    {/* Middle Column - Contact Form (Floating Design) */}
+                    {/* Middle Column - Contact Form */}
                     <div className="lg:col-span-5">
                         <div className="relative bg-white rounded-3xl shadow-2xl overflow-hidden transform hover:scale-[1.02] transition-all duration-500">
-                            {/* Decorative Top Bar */}
                             <div className="h-2 bg-gradient-to-r from-[#C3B091] via-[#D4C5A8] to-[#C3B091]"></div>
 
                             <div className="p-8 bg-black/5">
@@ -257,52 +232,45 @@ const Contact = () => {
                                         )}
                                     </button>
                                 </form>
-
-                                {/* Quick Response Note */}
-                                <div className="mt-6 text-center">
-                                    <p className="text-xs text-gray-400">
-                                        <Clock className="w-3 h-3 inline mr-1" />
-                                        Usually responds within 1 hour
-                                    </p>
-                                </div>
                             </div>
                         </div>
                     </div>
 
                     {/* Right Column - Contact Info & Branches */}
-                    <div className="lg:col-span-3 space-y-6 ">
-                        {/* Emergency Contact */}
+                    <div className="lg:col-span-3 space-y-6">
+                        {/* Main Contact */}
                         <div className="bg-white rounded-3xl p-6 shadow-xl text-center bg-black/5">
                             <div className="w-16 h-16 bg-[#C3B091]/10 rounded-full flex items-center justify-center mx-auto mb-4">
                                 <Phone className="w-8 h-8 text-[#C3B091]" />
                             </div>
-                            <h4 className="text-sm font-semibold text-gray-500 mb-1">Emergency Contact</h4>
+                            <h4 className="text-sm font-semibold text-gray-500 mb-1">Call Us</h4>
                             <a 
-  href="tel:+919000000001" 
-  className="text-2xl font-bold text-gray-900 hover:text-[#C3B091] transition-colors"
->
-  +91 90000 00001
-</a>
-                            <p className="text-xs text-gray-400 mt-2">24/7 Support Available</p>
+                                href="tel:+919XXXXXXXXX" 
+                                className="text-2xl font-bold text-gray-900 hover:text-[#C3B091] transition-colors"
+                            >
+                                +91 9XXXXXXXXX
+                            </a>
+                            <p className="text-xs text-gray-400 mt-2">Vellore | Tamil Nadu</p>
                         </div>
 
-                        {/* Branches */}
+                        {/* Branch Details */}
                         {branches.map((branch, idx) => (
-                            <div key={idx} className="group bg-white rounded-3xl p-5 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                            <div key={idx} className="group bg-white rounded-3xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300">
                                 <div className="flex items-start gap-3">
                                     <div className="p-2 bg-[#C3B091]/10 rounded-xl shrink-0">
-                                        <MapPin className="w-4 h-4 text-[#C3B091]" />
+                                        <MapPin className="w-5 h-5 text-[#C3B091]" />
                                     </div>
                                     <div className="flex-1">
-                                        <h4 className="font-bold text-gray-900 mb-1">{branch.name}</h4>
-                                        <p className="text-xs text-gray-500 leading-relaxed mb-2">{branch.address}</p>
-                                        <div className="flex items-center gap-3 text-xs">
-                                            <a href={`tel:${branch.phone}`} className="text-[#C3B091] hover:underline">
-                                                Call
+                                        <h4 className="font-bold text-gray-900 mb-2">{branch.name}</h4>
+                                        <p className="text-sm text-gray-600 leading-relaxed mb-3">
+                                            {branch.address}
+                                        </p>
+                                        <div className="space-y-1 text-sm">
+                                            <a href={`tel:${branch.phone}`} className="flex items-center gap-2 text-[#C3B091] hover:underline">
+                                                <Phone className="w-4 h-4" /> {branch.phone}
                                             </a>
-                                            <span className="text-gray-300">|</span>
-                                            <a href={`mailto:${branch.email}`} className="text-[#C3B091] hover:underline">
-                                                Email
+                                            <a href={`mailto:${branch.email}`} className="flex items-center gap-2 text-[#C3B091] hover:underline">
+                                                <Mail className="w-4 h-4" /> {branch.email}
                                             </a>
                                         </div>
                                     </div>
@@ -316,21 +284,44 @@ const Contact = () => {
                                 <h4 className="font-bold text-white">Business Hours</h4>
                                 <Clock className="w-4 h-4 text-[#C3B091]" />
                             </div>
-                            <div className="space-y-2">
-                                <div className="flex justify-between text-sm">
-                                    <span className="text-gray-400">Monday - Saturday</span>
-                                    <span className="text-white font-medium">9:00 AM - 9:00 PM</span>
+                            <div className="space-y-2 text-sm">
+                                <div className="flex justify-between">
+                                    <span className="text-gray-400">Mon - Sat</span>
+                                    <span className="text-white">9:00 AM - 9:00 PM</span>
                                 </div>
-                                <div className="flex justify-between text-sm">
+                                <div className="flex justify-between">
                                     <span className="text-gray-400">Sunday</span>
-                                    <span className="text-white font-medium">10:00 AM - 6:00 PM</span>
+                                    <span className="text-white">10:00 AM - 6:00 PM</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
+                {/* Map Section - Added at the bottom */}
+                <div className="mt-16">
+                    <div className="flex items-center gap-3 mb-6">
+                        <Navigation className="w-6 h-6 text-[#C3B091]" />
+                        <h3 className="text-2xl font-bold text-gray-900">Visit Our Studio</h3>
+                    </div>
+                    
+                    <div className="rounded-3xl overflow-hidden shadow-2xl border border-gray-100">
+                        <iframe
+                            width="100%"
+                            height="480"
+                            style={{ border: 0 }}
+                            loading="lazy"
+                            allowFullScreen
+                            referrerPolicy="no-referrer-when-downgrade"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.057678098306!2d79.147548!3d12.932026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDU1JzU1LjMiTiA3OcKwMDgnNTEuMiJF!5e0!3m2!1sen!2sin!4v1746450000000"
+                            title="Sivam Interiors - Vellore Location"
+                        ></iframe>
+                    </div>
 
+                    <div className="text-center mt-4 text-sm text-gray-500">
+                        92, Arcot Road, Opposite CMC OPD Gate, Kagithapatarai, Vellore - 632012
+                    </div>
+                </div>
             </div>
         </section>
     );
