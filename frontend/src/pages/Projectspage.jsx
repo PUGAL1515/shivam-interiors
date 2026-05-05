@@ -87,20 +87,6 @@ const projectsData = [
   },
   {
     id: 6,
-    title: "Wellness Spa",
-    category: "hospitality",
-    location: "Goa",
-    area: "1800 sq.ft",
-    year: "2024",
-    client: "Zen Retreats",
-    duration: "5 months",
-    description: "Tranquil spa with natural elements and calming design.",
-    longDescription: "A sanctuary of peace and rejuvenation with aromatherapy rooms.",
-    image: fallbackImages[5],
-    features: ["Aromatherapy Rooms", "Hydrotherapy Pool", "Meditation Zone"]
-  },
-  {
-    id: 7,
     title: "Minimalist Apartment",
     category: "residential",
     location: "Bangalore",
@@ -114,7 +100,7 @@ const projectsData = [
     features: ["Hidden Storage", "Multi-functional Furniture", "Smart Space Planning"]
   },
   {
-    id: 8,
+    id: 7,
     title: "Luxury Showroom",
     category: "commercial",
     location: "Connaught Place, Delhi",

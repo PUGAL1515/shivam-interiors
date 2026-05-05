@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, X, ChevronLeft, ChevronRight, Sparkles, Award, Clock, Users, Star, Shield, Zap } from 'lucide-react';
+import { ArrowRight, X, ChevronLeft, ChevronRight, Sparkles, Star, Zap } from 'lucide-react';
 
-const API_BASE_URL = import.meta.env.VITE_API_URL;
+// Production Ready API URL
+const API_BASE_URL = import.meta.env.VITE_API_URL?.replace(/\/$/, '') || 'https://shivam-interiors.33threads.in';
 
 const ServicePage = () => {
   const [services, setServices] = useState([]);
@@ -15,15 +16,31 @@ const ServicePage = () => {
   useEffect(() => {
     const fetchServices = async () => {
       try {
-        const res = await fetch(`${API_BASE_URL}/api/services/`);
+        const url = `${API_BASE_URL}/api/services/`;
+        console.log('🌐 Fetching services from:', url);
+
+        const res = await fetch(url, {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+
+        if (!res.ok) {
+          throw new Error(`HTTP Error: ${res.status}`);
+        }
+
         const data = await res.json();
         setServices(data);
+        setError(null);
       } catch (err) {
-        setError("Failed to load services");
+        console.error('API Fetch Error:', err);
+        setError("Failed to load services. Please try again later.");
       } finally {
         setLoading(false);
       }
     };
+
     fetchServices();
   }, []);
 
@@ -48,8 +65,26 @@ const ServicePage = () => {
     { value: "10+", label: "Awards Won" }
   ];
 
-  if (loading) return <div className="min-h-screen bg-gradient-to-br from-[#FDFCEB] to-[#1A1A1A] flex items-center justify-center text-[#C9A96E]">Loading Premium Services...</div>;
-  if (error) return <div className="text-red-500 text-center py-20">{error}</div>;
+  // Loading State
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-[#FDFCEB] to-[#1A1A1A] flex items-center justify-center text-[#C9A96E] text-xl">
+        Loading Premium Services...
+      </div>
+    );
+  }
+
+  // Error State
+  if (error) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-[#FDFCEB] to-[#1A1A1A] flex items-center justify-center">
+        <div className="text-center px-6">
+          <p className="text-red-500 text-xl mb-4">{error}</p>
+          <p className="text-[#3A3A3A]">Backend server might be restarting. Please refresh after some time.</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <>
@@ -136,11 +171,9 @@ const ServicePage = () => {
           </div>
         </div>
 
-        {/* Services Section - Perfect Card Grid */}
-         <div className="relative pt-4 pb-12">
+        {/* Services Section */}
+        <div className="relative pt-4 pb-12">
           <div className="max-w-7xl mx-auto px-6">
-            
-            {/* Section Header */}
             <div className="text-center mb-12">
               <span className="text-[#C9A96E] text-xs tracking-[4px] font-mono">OUR EXPERTISE</span>
               <h2 className="text-3xl md:text-4xl font-bold text-[#1A1A1A] mt-2">
@@ -149,9 +182,8 @@ const ServicePage = () => {
               <div className="w-16 h-px bg-[#C9A96E] mx-auto mt-3"></div>
             </div>
 
-            {/* Professional Grid Layout - 3 Cards per row */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {services.map((service, index) => {
+              {services.map((service) => {
                 const firstImage = service.images?.[0]?.image;
                 
                 return (
@@ -161,7 +193,6 @@ const ServicePage = () => {
                     onClick={() => openModal(service)}
                   >
                     <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all h-full flex flex-col">
-                      {/* Image Container - Fixed Size */}
                       <div className="relative h-56 overflow-hidden bg-gray-100">
                         <img 
                           src={firstImage || 'https://placehold.co/600x400/1f1f1f/C9A96E'} 
@@ -169,14 +200,11 @@ const ServicePage = () => {
                           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                        
-                        {/* Badge */}
                         <div className="absolute top-3 right-3 bg-[#C9A96E] text-black px-2 py-1 rounded-md text-xs font-bold">
                           Premium
                         </div>
                       </div>
 
-                      {/* Content - Fixed Size */}
                       <div className="p-5 flex-1 flex flex-col">
                         <div className="flex items-start justify-between mb-2">
                           <h3 className="text-lg font-bold text-[#1A1A1A] group-hover:text-[#C9A96E] transition-colors line-clamp-1">
@@ -191,7 +219,6 @@ const ServicePage = () => {
                           {service.long_description || service.description || "Premium interior design services tailored to your needs."}
                         </p>
                         
-                        {/* Features Tags */}
                         {service.features && service.features.length > 0 && (
                           <div className="flex flex-wrap gap-2 mt-auto">
                             {service.features.slice(0, 3).map((feature, i) => (
@@ -208,7 +235,6 @@ const ServicePage = () => {
               })}
             </div>
 
-            {/* No services message */}
             {services.length === 0 && (
               <div className="text-center py-12">
                 <p className="text-[#3A3A3A]">No services available at the moment.</p>
@@ -279,19 +305,28 @@ const ServicePage = () => {
               </div>
               
               <div className="relative rounded-xl overflow-hidden bg-black">
-                <img 
-                  src={modalImages[modalCurrentIndex]} 
-                  alt="" 
-                  className="max-h-[70vh] w-full object-contain"
-                />
+                {modalImages.length > 0 ? (
+                  <img 
+                    src={modalImages[modalCurrentIndex]} 
+                    alt="" 
+                    className="max-h-[70vh] w-full object-contain"
+                  />
+                ) : (
+                  <p className="text-white p-12 text-center">No images available</p>
+                )}
+
                 {modalImages.length > 1 && (
                   <>
-                    <button onClick={() => setModalCurrentIndex((p) => (p - 1 + modalImages.length) % modalImages.length)} 
-                      className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-[#C9A96E] text-white p-3 rounded-full transition-all">
+                    <button 
+                      onClick={() => setModalCurrentIndex((p) => (p - 1 + modalImages.length) % modalImages.length)} 
+                      className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-[#C9A96E] text-white p-3 rounded-full transition-all"
+                    >
                       <ChevronLeft size={24} />
                     </button>
-                    <button onClick={() => setModalCurrentIndex((p) => (p + 1) % modalImages.length)} 
-                      className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-[#C9A96E] text-white p-3 rounded-full transition-all">
+                    <button 
+                      onClick={() => setModalCurrentIndex((p) => (p + 1) % modalImages.length)} 
+                      className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-[#C9A96E] text-white p-3 rounded-full transition-all"
+                    >
                       <ChevronRight size={24} />
                     </button>
                   </>
