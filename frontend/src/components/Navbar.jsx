@@ -41,8 +41,8 @@ const Navbar = () => {
               <Link
                 to={item.path}
                 className={`relative pb-1 transition-all hover:text-[#FDFCEB] 
-                  ${isActive(item.path) 
-                    ? 'text-[#FDFCEB] font-semibold after:absolute after:bottom-0 after:left-0 after:h-[2.5px] after:w-full after:bg-[#FDFCEB]' 
+                  ${isActive(item.path)
+                    ? 'text-[#FDFCEB] font-semibold after:absolute after:bottom-0 after:left-0 after:h-[2.5px] after:w-full after:bg-[#FDFCEB]'
                     : ''}`}
               >
                 {item.name}
@@ -54,13 +54,12 @@ const Navbar = () => {
         {/* Right Side */}
         <div className="flex items-center gap-3 sm:gap-4">
           <a
-            href="tel:+919000000001"
+            href="tel:+919791746459"
             className="hidden md:flex items-center gap-2 text-gray-300 hover:text-[#FDFCEB] transition-colors"
           >
             <Phone size={18} />
-            <span className="text-sm font-medium">+91 90000 00001</span>
+            <span className="text-sm font-medium">+91 97917 46459</span>
           </a>
-
           <Link to="/contact">
             <button className="bg-[#FDFCEB] hover:bg-white text-[#1A1A1A] font-semibold px-5 sm:px-7 py-3 rounded-2xl text-xs sm:text-sm tracking-widest transition-all duration-300 hover:shadow-xl active:scale-95">
               GET FREE QUOTE
@@ -91,11 +90,10 @@ const Navbar = () => {
                 key={item.path}
                 to={item.path}
                 onClick={() => setOpen(false)}
-                className={`py-3 transition-all ${
-                  isActive(item.path)
+                className={`py-3 transition-all ${isActive(item.path)
                     ? "text-[#FDFCEB] border-l-4 border-[#FDFCEB] pl-4 font-semibold"
                     : "hover:text-[#FDFCEB]"
-                }`}
+                  }`}
               >
                 {item.name}
               </Link>
@@ -103,10 +101,10 @@ const Navbar = () => {
 
             <div className="pt-6 border-t border-[#FDFCEB]/10">
               <a
-                href="tel:+919000000001"
+                href="tel:+919791746459"
                 className="flex items-center gap-3 text-[#FDFCEB] text-base"
               >
-                <Phone size={24} /> +91 90000 00001
+                <Phone size={24} /> +91 97917 46459
               </a>
             </div>
           </div>
