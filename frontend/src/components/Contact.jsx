@@ -25,16 +25,16 @@ const Contact = () => {
         setIsSubmitting(false);
     };
 
-   const tamilNaduCities = [
+    const tamilNaduCities = [
         'Vellore', 'City 02', 'City 03', 'City 04', 'City 05',
         'City 06', 'City 07', 'City 08'
     ];
 
     const branches = [
         {
-            name: 'Sivam Interiors - Vellore',
-            address: '92, Arcot Rd, Opp CMC OPD Gate, Kagithapatarai, Vellore, Tamil Nadu 632012',
-            phone: '+91 XXXXXXXXXX', // Replace with actual number
+            name: 'Sivam Interiors - Vellore (Arcot Rd)',
+            address: '34, Arcot Rd, near UZHAVAR SANDHAI, Vellore, 632012',
+            phone: '+91 97917 46459', // Replace with actual number
             email: 'info@sivaminteriors.com' // Replace with actual email
         }
     ];
@@ -103,7 +103,7 @@ const Contact = () => {
                                         </div>
                                     </div>
 
-                            
+
                                 </div>
 
                                 <div className="mt-5 pt-4 border-t border-gray-100">
@@ -244,11 +244,11 @@ const Contact = () => {
                                 <Phone className="w-8 h-8 text-[#C3B091]" />
                             </div>
                             <h4 className="text-sm font-semibold text-gray-500 mb-1">Call Us</h4>
-                            <a 
-                                href="tel:+919XXXXXXXXX" 
+                            <a
+                                href="tel:+9197917 46459"
                                 className="text-2xl font-bold text-gray-900 hover:text-[#C3B091] transition-colors"
                             >
-                                +91 9XXXXXXXXX
+                                +91 97917 46459
                             </a>
                             <p className="text-xs text-gray-400 mt-2">Vellore | Tamil Nadu</p>
                         </div>
@@ -304,7 +304,7 @@ const Contact = () => {
                         <Navigation className="w-6 h-6 text-[#C3B091]" />
                         <h3 className="text-2xl font-bold text-gray-900">Visit Our Studio</h3>
                     </div>
-                    
+
                     <div className="rounded-3xl overflow-hidden shadow-2xl border border-gray-100">
                         <iframe
                             width="100%"
@@ -313,13 +313,13 @@ const Contact = () => {
                             loading="lazy"
                             allowFullScreen
                             referrerPolicy="no-referrer-when-downgrade"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.057678098306!2d79.147548!3d12.932026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDU1JzU1LjMiTiA3OcKwMDgnNTEuMiJF!5e0!3m2!1sen!2sin!4v1746450000000"
-                            title="Sivam Interiors - Vellore Location"
+                            src="https://www.google.com/maps?q=Asthalaxmi+Stainless+Steel+Pipes&output=embed"
+                            title="Asthalaxmi Stainless Steel Pipes Location"
                         ></iframe>
                     </div>
 
                     <div className="text-center mt-4 text-sm text-gray-500">
-                        92, Arcot Road, Opposite CMC OPD Gate, Kagithapatarai, Vellore - 632012
+                        34, Arcot Road, Near Uzhavar Sandhai, Vellore - 632012
                     </div>
                 </div>
             </div>

@@ -85,16 +85,15 @@ const Footer = () => {
                             <div className="flex gap-3">
                                 <MapPin size={18} className="mt-1 text-[#C3B091] flex-shrink-0" />
                                 <p className="text-gray-400 leading-relaxed">
-                                    92, Arcot Rd, Opp CMC OPD Gate,<br />
-                                    Kagithapatarai, Vellore,<br />
-                                    Tamil Nadu 632012, India
+                                    34, Arcot Rd, near UZHAVAR SANDHAI,<br />
+                                    Vellore, 632012
                                 </p>
                             </div>
 
                             <div className="flex items-center gap-3">
                                 <Phone size={18} className="text-[#C3B091]" />
                                 <a href="tel:+917760408660" className="hover:text-white transition-colors">
-                                    +91 90000 00001
+                                    +91 97917 46459
                                 </a>
                             </div>
 

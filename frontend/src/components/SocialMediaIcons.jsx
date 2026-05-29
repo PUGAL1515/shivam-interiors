@@ -17,13 +17,13 @@ const SocialMediaIcons = () => {
 
       {/* Instagram */}
       <a
-  href="https://www.instagram.com/yourpage"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="group w-12 h-12 flex items-center justify-center bg-white border border-gray-200 rounded-l-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-x-1"
->
-  <FaInstagram className="text-xl text-pink-500 group-hover:scale-110 transition-transform" />
-</a>
+        href="https://www.instagram.com/yourpage"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group w-12 h-12 flex items-center justify-center bg-white border border-gray-200 rounded-l-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-x-1"
+      >
+        <FaInstagram className="text-xl text-pink-500 group-hover:scale-110 transition-transform" />
+      </a>
 
       {/* LinkedIn */}
       <a
@@ -37,7 +37,7 @@ const SocialMediaIcons = () => {
 
       {/* WhatsApp */}
       <a
-        href="https://wa.me/919876543210"
+        href="https://wa.me/919791746459"
         target="_blank"
         rel="noopener noreferrer"
         className="group w-12 h-12 flex items-center justify-center bg-white border border-gray-200 rounded-l-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-x-1"
