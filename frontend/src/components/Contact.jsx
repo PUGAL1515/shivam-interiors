@@ -26,15 +26,14 @@ const Contact = () => {
     };
 
     const tamilNaduCities = [
-        'Vellore', 'City 02', 'City 03', 'City 04', 'City 05',
-        'City 06', 'City 07', 'City 08'
+        'Vellore'
     ];
 
     const branches = [
         {
             name: 'Sivam Interiors - Vellore (Arcot Rd)',
-            address: '34, Arcot Rd, near UZHAVAR SANDHAI, Vellore, 632012',
-            phone: '+91 97917 46459', // Replace with actual number
+            address: '187, Arcot Road, Kagithapattarai, Vellore, Tamil Nadu 632012',
+            phone: '+91 93637 46459', // Replace with actual number
             email: 'info@sivaminteriors.com' // Replace with actual email
         }
     ];
@@ -248,7 +247,7 @@ const Contact = () => {
                                 href="tel:+9197917 46459"
                                 className="text-2xl font-bold text-gray-900 hover:text-[#C3B091] transition-colors"
                             >
-                                +91 97917 46459
+                                +91 93637 46459
                             </a>
                             <p className="text-xs text-gray-400 mt-2">Vellore | Tamil Nadu</p>
                         </div>
@@ -306,20 +305,20 @@ const Contact = () => {
                     </div>
 
                     <div className="rounded-3xl overflow-hidden shadow-2xl border border-gray-100">
-                        <iframe
-                            width="100%"
-                            height="480"
-                            style={{ border: 0 }}
-                            loading="lazy"
-                            allowFullScreen
-                            referrerPolicy="no-referrer-when-downgrade"
-                            src="https://www.google.com/maps?q=Asthalaxmi+Stainless+Steel+Pipes&output=embed"
-                            title="Asthalaxmi Stainless Steel Pipes Location"
-                        ></iframe>
-                    </div>
+    <iframe
+        width="100%"
+        height="480"
+        style={{ border: 0 }}
+        loading="lazy"
+        allowFullScreen
+        referrerPolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=187+Arcot+Road+Kagithapattarai+Vellore+Tamil+Nadu+632012&output=embed"
+        title="Kagithapattarai Location"
+    ></iframe>
+</div>
 
                     <div className="text-center mt-4 text-sm text-gray-500">
-                        34, Arcot Road, Near Uzhavar Sandhai, Vellore - 632012
+                        187, Arcot Road, Kagithapattarai, Vellore, Tamil Nadu-632012
                     </div>
                 </div>
             </div>
