@@ -62,7 +62,7 @@ const Navbar = () => {
           </a>
           <Link to="/contact">
             <button className="bg-[#FDFCEB] hover:bg-white text-[#1A1A1A] font-semibold px-5 sm:px-7 py-3 rounded-2xl text-xs sm:text-sm tracking-widest transition-all duration-300 hover:shadow-xl active:scale-95">
-              GET FREE QUOTE
+              GET QUOTE
             </button>
           </Link>
 
@@ -101,10 +101,10 @@ const Navbar = () => {
 
             <div className="pt-6 border-t border-[#FDFCEB]/10">
               <a
-                href="tel:+919791746459"
+                href="tel:+919363746459"
                 className="flex items-center gap-3 text-[#FDFCEB] text-base"
               >
-                <Phone size={24} /> +91 97917 46459
+                <Phone size={24} /> +91 93637 46459
               </a>
             </div>
           </div>
