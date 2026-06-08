@@ -83,17 +83,20 @@ const Footer = () => {
                         <div className="space-y-6 text-sm">
                             {/* Address Section */}
                             <div className="flex gap-3">
-                                <MapPin size={18} className="mt-1 text-[#C3B091] flex-shrink-0" />
-                                <p className="text-gray-400 leading-relaxed">
-                                    34, Arcot Rd, near UZHAVAR SANDHAI,<br />
-                                    Vellore, 632012
-                                </p>
-                            </div>
+    <MapPin size={18} className="mt-1 text-[#C3B091] flex-shrink-0" />
+    <p className="text-gray-400 leading-relaxed">
+        187, Arcot Road, Kagithapattarai,<br />
+        Vellore, Tamil Nadu 632012
+    </p>
+</div>
 
                             <div className="flex items-center gap-3">
                                 <Phone size={18} className="text-[#C3B091]" />
-                                <a href="tel:+917760408660" className="hover:text-white transition-colors">
-                                    +91 97917 46459
+                                <a
+                                    href="tel:+919363746459"
+                                    className="hover:text-white transition-colors"
+                                >
+                                    +91 93637 46459
                                 </a>
                             </div>
 
