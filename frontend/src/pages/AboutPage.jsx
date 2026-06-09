@@ -105,7 +105,7 @@ const AboutPage = () => {
             <nav className="hidden md:flex items-center gap-8">
               <a href="#" className="text-sm font-medium text-black/60 hover:text-black transition-colors">Home</a>
               <a href="#" className="text-sm font-medium text-black/60 hover:text-black transition-colors">Portfolio</a>
-              <a href="#" className="text-sm font-medium text-black transition-colors font-semibold">About</a>
+              <a href="#" className="text-sm font-medium text-black transition-colors">About</a>
               <a href="#" className="text-sm font-medium text-black/60 hover:text-black transition-colors">Services</a>
               <a href="#" className="text-sm font-medium text-black/60 hover:text-black transition-colors">Contact</a>
             </nav>
