@@ -54,11 +54,11 @@ const Navbar = () => {
         {/* Right Side */}
         <div className="flex items-center gap-3 sm:gap-4">
           <a
-            href="tel:+919791746459"
+            href="tel:+919363746459"
             className="hidden md:flex items-center gap-2 text-gray-300 hover:text-[#FDFCEB] transition-colors"
           >
             <Phone size={18} />
-            <span className="text-sm font-medium">+91 97917 46459</span>
+            <span className="text-sm font-medium">+91 93637 46459</span>
           </a>
           <Link to="/contact">
             <button className="bg-[#FDFCEB] hover:bg-white text-[#1A1A1A] font-semibold px-5 sm:px-7 py-3 rounded-2xl text-xs sm:text-sm tracking-widest transition-all duration-300 hover:shadow-xl active:scale-95">
@@ -91,8 +91,8 @@ const Navbar = () => {
                 to={item.path}
                 onClick={() => setOpen(false)}
                 className={`py-3 transition-all ${isActive(item.path)
-                    ? "text-[#FDFCEB] border-l-4 border-[#FDFCEB] pl-4 font-semibold"
-                    : "hover:text-[#FDFCEB]"
+                  ? "text-[#FDFCEB] border-l-4 border-[#FDFCEB] pl-4 font-semibold"
+                  : "hover:text-[#FDFCEB]"
                   }`}
               >
                 {item.name}
