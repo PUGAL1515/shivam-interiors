@@ -22,13 +22,19 @@ const Navbar = () => {
               className="h-9 sm:h-11 w-auto object-contain"
             />
           </div>
+
           <div>
-            <p className="text-xl sm:text-2xl font-bold tracking-tighter text-white">SHIVAM</p>
-            <p className="text-[10px] sm:text-sm -mt-1 text-[#FDFCEB] font-medium tracking-[2px]">INTERIORS</p>
+            <p className="text-xl sm:text-2xl font-bold tracking-tighter text-white">
+              SHIVAM
+            </p>
+            <p className="text-[10px] sm:text-sm -mt-1 text-[#FDFCEB] font-medium tracking-[2px]">
+              INTERIORS
+            </p>
           </div>
         </Link>
 
-        {/* Desktop Menu with Cream Underline */}
+
+        {/* Desktop Menu */}
         <ul className="hidden md:flex items-center gap-8 lg:gap-10 text-sm uppercase tracking-widest font-medium">
           {[
             { name: "HOME", path: "/" },
@@ -40,10 +46,12 @@ const Navbar = () => {
             <li key={item.path}>
               <Link
                 to={item.path}
-                className={`relative pb-1 transition-all hover:text-[#FDFCEB] 
-                  ${isActive(item.path)
-                    ? 'text-[#FDFCEB] font-semibold after:absolute after:bottom-0 after:left-0 after:h-[2.5px] after:w-full after:bg-[#FDFCEB]'
-                    : ''}`}
+                className={`relative pb-1 transition-all hover:text-[#FDFCEB]
+                  ${
+                    isActive(item.path)
+                      ? "text-[#FDFCEB] font-semibold after:absolute after:bottom-0 after:left-0 after:h-[2.5px] after:w-full after:bg-[#FDFCEB]"
+                      : ""
+                  }`}
               >
                 {item.name}
               </Link>
@@ -51,34 +59,58 @@ const Navbar = () => {
           ))}
         </ul>
 
+
         {/* Right Side */}
         <div className="flex items-center gap-3 sm:gap-4">
-          <a
-            href="tel:+919363746459"
-            className="hidden md:flex items-center gap-2 text-gray-300 hover:text-[#FDFCEB] transition-colors"
-          >
+
+          {/* Desktop Phone */}
+          <div className="hidden md:flex items-center gap-2 text-gray-300">
             <Phone size={18} />
-            <span className="text-sm font-medium">+91 93637 46459</span>
-          </a>
+
+            <div className="flex flex-col text-sm font-medium">
+              <a
+                href="tel:+919363746459"
+                className="hover:text-[#FDFCEB] transition-colors"
+              >
+                +91 93637 46459
+              </a>
+
+              <a
+                href="tel:+919791746459"
+                className="hover:text-[#FDFCEB] transition-colors"
+              >
+                +91 97917 46459
+              </a>
+            </div>
+          </div>
+
+
+          {/* Quote Button */}
           <Link to="/contact">
             <button className="bg-[#FDFCEB] hover:bg-white text-[#1A1A1A] font-semibold px-5 sm:px-7 py-3 rounded-2xl text-xs sm:text-sm tracking-widest transition-all duration-300 hover:shadow-xl active:scale-95">
               GET QUOTE
             </button>
           </Link>
 
+
+          {/* Mobile Menu Button */}
           <button
             className="md:hidden text-white p-2"
             onClick={() => setOpen(!open)}
           >
             {open ? <X size={28} /> : <Menu size={28} />}
           </button>
+
         </div>
       </div>
+
 
       {/* Mobile Menu */}
       {open && (
         <div className="md:hidden bg-[#1A1A1A] border-t border-[#FDFCEB]/20 py-8">
+
           <div className="px-6 flex flex-col gap-6 text-lg font-medium">
+
             {[
               { name: "Home", path: "/" },
               { name: "Services", path: "/services" },
@@ -90,26 +122,50 @@ const Navbar = () => {
                 key={item.path}
                 to={item.path}
                 onClick={() => setOpen(false)}
-                className={`py-3 transition-all ${isActive(item.path)
-                  ? "text-[#FDFCEB] border-l-4 border-[#FDFCEB] pl-4 font-semibold"
-                  : "hover:text-[#FDFCEB]"
-                  }`}
+                className={`py-3 transition-all ${
+                  isActive(item.path)
+                    ? "text-[#FDFCEB] border-l-4 border-[#FDFCEB] pl-4 font-semibold"
+                    : "hover:text-[#FDFCEB]"
+                }`}
               >
                 {item.name}
               </Link>
             ))}
 
+
+            {/* Mobile Phone Numbers */}
             <div className="pt-6 border-t border-[#FDFCEB]/10">
-              <a
-                href="tel:+919363746459"
-                className="flex items-center gap-3 text-[#FDFCEB] text-base"
-              >
-                <Phone size={24} /> +91 93637 46459
-              </a>
+
+              <div className="flex items-start gap-3 text-[#FDFCEB] text-base">
+
+                <Phone size={24} className="mt-1" />
+
+                <div className="flex flex-col gap-1">
+
+                  <a
+                    href="tel:+919363746459"
+                    className="hover:text-[#C3B091] transition-colors"
+                  >
+                    +91 93637 46459
+                  </a>
+
+                  <a
+                    href="tel:+919791746459"
+                    className="hover:text-[#C3B091] transition-colors"
+                  >
+                    +91 97917 46459
+                  </a>
+
+                </div>
+
+              </div>
+
             </div>
+
           </div>
         </div>
       )}
+
     </nav>
   );
 };
