@@ -25,8 +25,11 @@ const Contact = () => {
         setIsSubmitting(false);
     };
 
-    const tamilNaduCities = [
-        'Vellore'
+    const cities = [
+        'Vellore',
+    'Chennai',
+    'Bangalore',
+    'Coimbatore'
     ];
 
     const branches = [
@@ -93,7 +96,7 @@ const Contact = () => {
                                             <span className="text-sm font-semibold text-gray-700">Tamil Nadu</span>
                                         </div>
                                         <div className="grid grid-cols-2 gap-1.5 ml-5">
-                                            {tamilNaduCities.map((city, idx) => (
+                                            {cities.map((city, idx) => (
                                                 <div key={idx} className="flex items-center gap-1.5">
                                                     <div className="w-1 h-1 rounded-full bg-[#C3B091]/60"></div>
                                                     <span className="text-xs text-gray-600">{city}</span>
