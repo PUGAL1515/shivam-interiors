@@ -23,32 +23,39 @@ const Footer = () => {
 
                         {/* Social Icons */}
                         <div className="flex gap-4">
+
+                            {/* Facebook */}
                             <a
-                                href="https://www.facebook.com"
+                                href="https://www.facebook.com/share/1C2whFX2Fe/"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="w-10 h-10 bg-zinc-900 hover:bg-[#1877F2] rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110"
+                                className="w-12 h-12 bg-zinc-900 hover:bg-[#1877F2] rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110"
                             >
-                                <FaFacebookF />
+                                <FaFacebookF className="text-xl" />
                             </a>
 
+
+                            {/* Instagram */}
                             <a
-                                href="https://www.instagram.com"
+                                href="https://www.instagram.com/shivaminteriors0005?igsh=MWN3dWRvdzEzYm5lNA%3D%3D&utm_source=qr"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="w-10 h-10 bg-zinc-900 hover:bg-[#E1306C] rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110"
+                                className="w-12 h-12 bg-zinc-900 hover:bg-[#E1306C] rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110"
                             >
-                                <FaInstagram />
+                                <FaInstagram className="text-xl" />
                             </a>
 
+
+                            {/* YouTube */}
                             <a
-                                href="https://youtube.com"
+                                href="https://youtube.com/@sivashivam-i1c4r?si=6uBC5TsX4uyElooJ"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="w-10 h-10 bg-zinc-900 hover:bg-red-600 rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110"
+                                className="w-12 h-12 bg-zinc-900 hover:bg-red-600 rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110"
                             >
-                                <FaYoutube />
+                                <FaYoutube className="text-xl" />
                             </a>
+
                         </div>
                     </div>
 
@@ -83,21 +90,31 @@ const Footer = () => {
                         <div className="space-y-6 text-sm">
                             {/* Address Section */}
                             <div className="flex gap-3">
-    <MapPin size={18} className="mt-1 text-[#C3B091] flex-shrink-0" />
-    <p className="text-gray-400 leading-relaxed">
-        187, Arcot Road, Kagithapattarai,<br />
-        Vellore, Tamil Nadu 632012
-    </p>
-</div>
+                                <MapPin size={18} className="mt-1 text-[#C3B091] flex-shrink-0" />
+                                <p className="text-gray-400 leading-relaxed">
+                                    187, Arcot Road, Kagithapattarai,<br />
+                                    Vellore, Tamil Nadu 632012
+                                </p>
+                            </div>
 
                             <div className="flex items-center gap-3">
                                 <Phone size={18} className="text-[#C3B091]" />
-                                <a
-                                    href="tel:+919363746459"
-                                    className="hover:text-white transition-colors"
-                                >
-                                    +91 93637 46459
-                                </a>
+
+                                <div className="flex flex-col">
+                                    <a
+                                        href="tel:+919363746459"
+                                        className="hover:text-white transition-colors"
+                                    >
+                                        +91 93637 46459
+                                    </a>
+
+                                    <a
+                                        href="tel:+919791746459"
+                                        className="hover:text-white transition-colors"
+                                    >
+                                        +91 97917 46459
+                                    </a>
+                                </div>
                             </div>
 
                             <div className="flex items-center gap-3">

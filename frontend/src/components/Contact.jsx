@@ -27,19 +27,19 @@ const Contact = () => {
 
     const cities = [
         'Vellore',
-    'Chennai',
-    'Bangalore',
-    'Coimbatore'
+        'Chennai',
+        'Bangalore',
+        'Coimbatore', 'Andhra'
     ];
 
     const branches = [
-        {
-            name: 'Sivam Interiors - Vellore (Arcot Rd)',
-            address: '187, Arcot Road, Kagithapattarai, Vellore, Tamil Nadu 632012',
-            phone: '+91 93637 46459', // Replace with actual number
-            email: 'info@sivaminteriors.com' // Replace with actual email
-        }
-    ];
+    {
+        name: 'Sivam Interiors - Vellore (Arcot Rd)',
+        address: '187, Arcot Road, Kagithapattarai, Vellore, Tamil Nadu 632012',
+        phone: ['+91 93637 46459', '+91 97917 46459'],
+        email: 'info@sivaminteriors.com'
+    }
+];
 
     return (
         <section className="relative py-20 overflow-hidden bg-[#FDFCEB]">
@@ -242,43 +242,73 @@ const Contact = () => {
                     <div className="lg:col-span-3 space-y-6">
                         {/* Main Contact */}
                         <div className="bg-white rounded-3xl p-6 shadow-xl text-center bg-black/5">
-                            <div className="w-16 h-16 bg-[#C3B091]/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <Phone className="w-8 h-8 text-[#C3B091]" />
-                            </div>
-                            <h4 className="text-sm font-semibold text-gray-500 mb-1">Call Us</h4>
-                            <a
-                                href="tel:+9197917 46459"
-                                className="text-2xl font-bold text-gray-900 hover:text-[#C3B091] transition-colors"
-                            >
-                                +91 93637 46459
-                            </a>
-                            <p className="text-xs text-gray-400 mt-2">Vellore | Tamil Nadu</p>
-                        </div>
+    <div className="w-16 h-16 bg-[#C3B091]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+        <Phone className="w-8 h-8 text-[#C3B091]" />
+    </div>
+
+    <h4 className="text-sm font-semibold text-gray-500 mb-1">Call Us</h4>
+
+    <a
+        href="tel:+919363746459"
+        className="text-xl font-bold text-gray-900 hover:text-[#C3B091] transition-colors block"
+    >
+        +91 93637 46459
+    </a>
+
+    <a
+        href="tel:+919791746459"
+        className="text-xl font-bold text-gray-900 hover:text-[#C3B091] transition-colors block"
+    >
+        +91 97917 46459
+    </a>
+
+    <p className="text-xs text-gray-400 mt-2">Vellore | Tamil Nadu</p>
+</div>
 
                         {/* Branch Details */}
                         {branches.map((branch, idx) => (
-                            <div key={idx} className="group bg-white rounded-3xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300">
-                                <div className="flex items-start gap-3">
-                                    <div className="p-2 bg-[#C3B091]/10 rounded-xl shrink-0">
-                                        <MapPin className="w-5 h-5 text-[#C3B091]" />
-                                    </div>
-                                    <div className="flex-1">
-                                        <h4 className="font-bold text-gray-900 mb-2">{branch.name}</h4>
-                                        <p className="text-sm text-gray-600 leading-relaxed mb-3">
-                                            {branch.address}
-                                        </p>
-                                        <div className="space-y-1 text-sm">
-                                            <a href={`tel:${branch.phone}`} className="flex items-center gap-2 text-[#C3B091] hover:underline">
-                                                <Phone className="w-4 h-4" /> {branch.phone}
-                                            </a>
-                                            <a href={`mailto:${branch.email}`} className="flex items-center gap-2 text-[#C3B091] hover:underline">
-                                                <Mail className="w-4 h-4" /> {branch.email}
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
+    <div 
+        key={idx} 
+        className="group bg-white rounded-3xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300"
+    >
+        <div className="flex items-start gap-3">
+            <div className="p-2 bg-[#C3B091]/10 rounded-xl shrink-0">
+                <MapPin className="w-5 h-5 text-[#C3B091]" />
+            </div>
+
+            <div className="flex-1">
+                <h4 className="font-bold text-gray-900 mb-2">
+                    {branch.name}
+                </h4>
+
+                <p className="text-sm text-gray-600 leading-relaxed mb-3">
+                    {branch.address}
+                </p>
+
+                <div className="space-y-1 text-sm">
+                    {branch.phone.map((number, index) => (
+                        <a
+                            key={index}
+                            href={`tel:${number.replace(/\s+/g, '')}`}
+                            className="flex items-center gap-2 text-[#C3B091] hover:underline"
+                        >
+                            <Phone className="w-4 h-4" />
+                            {number}
+                        </a>
+                    ))}
+
+                    <a
+                        href={`mailto:${branch.email}`}
+                        className="flex items-center gap-2 text-[#C3B091] hover:underline"
+                    >
+                        <Mail className="w-4 h-4" />
+                        {branch.email}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+))}
 
                         {/* Business Hours */}
                         <div className="bg-gray-900 rounded-3xl p-5 shadow-xl">
@@ -308,17 +338,17 @@ const Contact = () => {
                     </div>
 
                     <div className="rounded-3xl overflow-hidden shadow-2xl border border-gray-100">
-    <iframe
-        width="100%"
-        height="480"
-        style={{ border: 0 }}
-        loading="lazy"
-        allowFullScreen
-        referrerPolicy="no-referrer-when-downgrade"
-        src="https://www.google.com/maps?q=187+Arcot+Road+Kagithapattarai+Vellore+Tamil+Nadu+632012&output=embed"
-        title="Kagithapattarai Location"
-    ></iframe>
-</div>
+                        <iframe
+                            width="100%"
+                            height="480"
+                            style={{ border: 0 }}
+                            loading="lazy"
+                            allowFullScreen
+                            referrerPolicy="no-referrer-when-downgrade"
+                            src="https://www.google.com/maps?q=187+Arcot+Road+Kagithapattarai+Vellore+Tamil+Nadu+632012&output=embed"
+                            title="Kagithapattarai Location"
+                        ></iframe>
+                    </div>
 
                     <div className="text-center mt-4 text-sm text-gray-500">
                         187, Arcot Road, Kagithapattarai, Vellore, Tamil Nadu-632012

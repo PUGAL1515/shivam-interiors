@@ -142,7 +142,7 @@ const Hero = () => {
 
         {/* Highlights */}
         <div className="flex flex-wrap justify-center gap-4 mb-8 -mt-10">
-          {["PVC Wall Paneling", "SPC Luxury Flooring", "Modular Kitchens", "Wardrobes & TV Units", "UPVC False Ceilings"].map((service, i) => (
+          {["UPVC Wall Paneling", "SPC Luxury Flooring", "Modular Kitchens", "Wardrobes & TV Units", "UPVC False Ceilings"].map((service, i) => (
             <div key={i} className="bg-white/10 backdrop-blur-md px-8 py-3 rounded-2xl border border-white/30 hover:border-[#FDFCEB] hover:bg-white/20 transition-all text-sm md:text-base">
               {service}
             </div>
