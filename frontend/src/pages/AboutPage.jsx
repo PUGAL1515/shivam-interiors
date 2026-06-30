@@ -5,7 +5,7 @@ import {
   ArrowRight, TrendingUp, CheckCircle
 } from 'lucide-react';
 
-// Custom Social Icons (since Lucide removed brand icons)
+// Custom Social Icons
 const InstagramIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
@@ -17,6 +17,20 @@ const InstagramIcon = () => (
 const FacebookIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+  </svg>
+);
+
+const YoutubeIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.42a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 2c1.72.42 8.6.42 8.6.42s6.88 0 8.6-.42a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"/>
+    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/>
+  </svg>
+);
+
+const WhatsappIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5 8.5 8.5 0 0 1-7.3-4.1L3 21l4.1-2.2A8.5 8.5 0 0 1 3.5 11.5 8.5 8.5 0 0 1 12 3a8.5 8.5 0 0 1 8.5 8.5z"/>
+    <path d="M16 13.5c-.5 1-1.5 2-3 2s-2.5-1-3-2"/>
   </svg>
 );
 
@@ -166,7 +180,7 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* Stats Section - Improved spacing */}
+      {/* Stats Section */}
       <section className="py-20 border-y border-black/10 bg-white/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
@@ -236,9 +250,7 @@ const AboutPage = () => {
         </div>
       </section>
 
-      
-
-      {/* Why Choose Us Section - New section replacing timeline */}
+      {/* Why Choose Us Section */}
       <section className="py-24 bg-black text-[#FDFCEB]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -318,60 +330,7 @@ const AboutPage = () => {
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="py-12 border-t border-black/10 bg-[#FDFCEB]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <div className="flex items-center gap-2 mb-4">
-                <div className="w-8 h-8 bg-black rounded-lg flex items-center justify-center">
-                  <Home className="w-4 h-4 text-[#FDFCEB]" />
-                </div>
-                <span className="font-bold text-lg">InteriorStudio</span>
-              </div>
-              <p className="text-sm text-black/60">Creating beautiful spaces that inspire and delight.</p>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4">Quick Links</h4>
-              <ul className="space-y-2 text-sm text-black/60">
-                <li><a href="#" className="hover:text-black transition-colors">About Us</a></li>
-                <li><a href="#" className="hover:text-black transition-colors">Portfolio</a></li>
-                <li><a href="#" className="hover:text-black transition-colors">Services</a></li>
-                <li><a href="#" className="hover:text-black transition-colors">Blog</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4">Contact</h4>
-              <ul className="space-y-2 text-sm text-black/60">
-                <li className="flex items-center gap-2"><MapPin className="w-4 h-4" /> 123 Design Street, NY</li>
-                <li className="flex items-center gap-2"><Phone className="w-4 h-4" /> +1 234 567 890</li>
-                <li className="flex items-center gap-2"><Mail className="w-4 h-4" /> hello@interiorstudio.com</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4">Follow Us</h4>
-              <div className="flex gap-3">
-                <a href="#" className="w-9 h-9 bg-black/5 rounded-full flex items-center justify-center hover:bg-black hover:text-white transition-colors">
-                  <InstagramIcon />
-                </a>
-                <a href="#" className="w-9 h-9 bg-black/5 rounded-full flex items-center justify-center hover:bg-black hover:text-white transition-colors">
-                  <FacebookIcon />
-                </a>
-                <a href="#" className="w-9 h-9 bg-black/5 rounded-full flex items-center justify-center hover:bg-black hover:text-white transition-colors">
-                  <TwitterIcon />
-                </a>
-                <a href="#" className="w-9 h-9 bg-black/5 rounded-full flex items-center justify-center hover:bg-black hover:text-white transition-colors">
-                  <LinkedinIcon />
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="text-center pt-8 mt-8 border-t border-black/10 text-sm text-black/50">
-            <p>&copy; 2024 InteriorStudio. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+<div className="w-full h-2 bg-[#FDFCEB]"></div>
 
       <style jsx>{`
         @keyframes fade-in {
