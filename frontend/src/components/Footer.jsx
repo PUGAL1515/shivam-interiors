@@ -119,11 +119,10 @@ const Footer = () => {
 
                             <div className="flex items-center gap-3">
                                 <Mail size={18} className="text-[#C3B091]" />
-                                <a href="mailto:info@sivaminteriors.com" className="hover:text-white transition-colors">
-                                    info@sivaminteriors.com
+                                <a href="mailto:shivaminteriors005@gmail.com" className="hover:text-white transition-colors">
+                                    shivaminteriors005@gmail.com
                                 </a>
                             </div>
-
                             <div className="flex items-center gap-3">
                                 <Clock size={18} className="text-[#C3B091]" />
                                 <span>Mon - Sun: 9:00 AM - 9:00 PM</span>

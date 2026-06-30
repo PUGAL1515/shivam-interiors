@@ -33,13 +33,13 @@ const Contact = () => {
     ];
 
     const branches = [
-    {
-        name: 'Sivam Interiors - Vellore (Arcot Rd)',
-        address: '187, Arcot Road, Kagithapattarai, Vellore, Tamil Nadu 632012',
-        phone: ['+91 93637 46459', '+91 97917 46459'],
-        email: 'info@sivaminteriors.com'
-    }
-];
+        {
+            name: 'Sivam Interiors - Vellore (Arcot Rd)',
+            address: '187, Arcot Road, Kagithapattarai, Vellore, Tamil Nadu 632012',
+            phone: ['+91 93637 46459', '+91 97917 46459'],
+            email: 'shivaminteriors005@gmail.com'
+        }
+    ];
 
     return (
         <section className="relative py-20 overflow-hidden bg-[#FDFCEB]">
@@ -242,41 +242,42 @@ const Contact = () => {
                     <div className="lg:col-span-3 space-y-6">
                         {/* Main Contact */}
                         <div className="bg-white rounded-3xl p-6 shadow-xl text-center bg-black/5">
-    <div className="w-16 h-16 bg-[#C3B091]/10 rounded-full flex items-center justify-center mx-auto mb-4">
-        <Phone className="w-8 h-8 text-[#C3B091]" />
-    </div>
+                            <div className="w-16 h-16 bg-[#C3B091]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <Phone className="w-8 h-8 text-[#C3B091]" />
+                            </div>
 
-    <h4 className="text-sm font-semibold text-gray-500 mb-1">Call Us</h4>
+                            <h4 className="text-sm font-semibold text-gray-500 mb-1">Call Us</h4>
 
-    <a
-        href="tel:+919363746459"
-        className="text-xl font-bold text-gray-900 hover:text-[#C3B091] transition-colors block"
-    >
-        +91 93637 46459
-    </a>
+                            <a
+                                href="tel:+919363746459"
+                                className="text-xl font-bold text-gray-900 hover:text-[#C3B091] transition-colors block"
+                            >
+                                +91 93637 46459
+                            </a>
 
-    <a
-        href="tel:+919791746459"
-        className="text-xl font-bold text-gray-900 hover:text-[#C3B091] transition-colors block"
-    >
-        +91 97917 46459
-    </a>
+                            <a
+                                href="tel:+919791746459"
+                                className="text-xl font-bold text-gray-900 hover:text-[#C3B091] transition-colors block"
+                            >
+                                +91 97917 46459
+                            </a>
 
-    <p className="text-xs text-gray-400 mt-2">Vellore | Tamil Nadu</p>
-</div>
+                            <p className="text-xs text-gray-400 mt-2">Vellore | Tamil Nadu</p>
+                        </div>
 
                         {/* Branch Details */}
-                        {branches.map((branch, idx) => (
+                        {/* Branch Details */}
+{branches.map((branch, idx) => (
     <div 
         key={idx} 
-        className="group bg-white rounded-3xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300"
+        className="group bg-white rounded-3xl p-5 shadow-xl hover:shadow-2xl transition-all duration-300"
     >
-        <div className="flex items-start gap-3">
-            <div className="p-2 bg-[#C3B091]/10 rounded-xl shrink-0">
-                <MapPin className="w-5 h-5 text-[#C3B091]" />
-            </div>
+        <div className="flex items-start gap-2">   {/* Balanced gap */}
+           <div className="-ml-2 p-1.5 bg-[#C3B091]/10 rounded-lg shrink-0">
+    <MapPin className="w-4 h-4 text-[#C3B091]" />
+</div>
 
-            <div className="flex-1">
+            <div className="flex-1 min-w-0">
                 <h4 className="font-bold text-gray-900 mb-2">
                     {branch.name}
                 </h4>
@@ -285,24 +286,27 @@ const Contact = () => {
                     {branch.address}
                 </p>
 
-                <div className="space-y-1 text-sm">
+                <div className="space-y-2 text-sm">
                     {branch.phone.map((number, index) => (
                         <a
                             key={index}
                             href={`tel:${number.replace(/\s+/g, '')}`}
                             className="flex items-center gap-2 text-[#C3B091] hover:underline"
                         >
-                            <Phone className="w-4 h-4" />
+                            <Phone className="w-4 h-4 shrink-0" />
                             {number}
                         </a>
                     ))}
 
+                    {/* Fixed Email with Visible Icon */}
                     <a
                         href={`mailto:${branch.email}`}
-                        className="flex items-center gap-2 text-[#C3B091] hover:underline"
+                        className="flex items-center gap-2 text-[#C3B091] hover:underline group-hover:text-[#B49F7A] transition-colors"
                     >
-                        <Mail className="w-4 h-4" />
-                        {branch.email}
+                        <Mail className="w-4 h-4 shrink-0 flex-none" />
+                        <span className="text-[13px] leading-tight font-medium break-all">
+                            shivaminteriors005@gmail.com
+                        </span>
                     </a>
                 </div>
             </div>
