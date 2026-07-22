@@ -11,13 +11,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # ====================== SECURITY SETTINGS ======================
 SECRET_KEY = 'django-insecure-h@*tzv5y!l7lx!2iocb_syrvuhx@aca85#q3(i9ya#jlt3-w=_'
 
-DEBUG = True   # ← Change to True only when developing locally
+DEBUG = False  
 
 ALLOWED_HOSTS = [
-    'shivam-interiors.33threads.in',
-    'www.shivam-interiors.33threads.in',
-    'localhost',
-    '127.0.0.1',
+    "shivaminteriorsupvc.com",
+    "www.shivaminteriorsupvc.com",
+    "localhost",
+    "127.0.0.1",
 ]
 
 # ====================== APPLICATION DEFINITION ======================
@@ -82,8 +82,8 @@ DATABASES = {
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "http://127.0.0.1:5173",
-    "https://shivam-interiors.33threads.in",
-    "https://www.shivam-interiors.33threads.in",
+    "https://shivaminteriorsupvc.com",
+    "https://www.shivaminteriorsupvc.com",
 ]
 
 CORS_ALLOW_CREDENTIALS = True
