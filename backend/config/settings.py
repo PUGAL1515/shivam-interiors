@@ -11,7 +11,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = "django-insecure-h@*tzv5y!l7lx!2iocb_syrvuhx@aca85#q3(i9ya#jlt3-w=_"
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     ".onrender.com",
@@ -90,8 +90,12 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
+# After STATICFILES_STORAGE
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
+
+# Optional: Let WhiteNoise handle media too
+WHITENOISE_ROOT = BASE_DIR / "media"   # Add this
 
 # ====================== CORS ======================
 
