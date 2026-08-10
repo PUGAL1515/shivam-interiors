@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';          // ← add this
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import { FaFacebookF, FaInstagram, FaYoutube } from 'react-icons/fa';
 
@@ -21,10 +22,8 @@ const Footer = () => {
                             Premium UPVC doors, windows & interiors. Quality craftsmanship with modern solutions for your dream home and office.
                         </p>
 
-                        {/* Social Icons */}
+                        {/* Social Icons – keep as <a> (external) */}
                         <div className="flex gap-4">
-
-                            {/* Facebook */}
                             <a
                                 href="https://www.facebook.com/share/1C2whFX2Fe/"
                                 target="_blank"
@@ -34,8 +33,6 @@ const Footer = () => {
                                 <FaFacebookF className="text-xl" />
                             </a>
 
-
-                            {/* Instagram */}
                             <a
                                 href="https://www.instagram.com/shivaminteriors0005?igsh=MWN3dWRvdzEzYm5lNA%3D%3D&utm_source=qr"
                                 target="_blank"
@@ -45,8 +42,6 @@ const Footer = () => {
                                 <FaInstagram className="text-xl" />
                             </a>
 
-
-                            {/* YouTube */}
                             <a
                                 href="https://youtube.com/@sivashivam-i1c4r?si=6uBC5TsX4uyElooJ"
                                 target="_blank"
@@ -55,40 +50,78 @@ const Footer = () => {
                             >
                                 <FaYoutube className="text-xl" />
                             </a>
-
                         </div>
                     </div>
 
-                    {/* Quick Links */}
+                    {/* Quick Links – use Link */}
                     <div className="lg:col-span-2">
                         <h3 className="text-white text-xl font-semibold mb-5">Quick Links</h3>
                         <ul className="space-y-3 text-sm">
-                            <li><a href="/" className="hover:text-[#C3B091] transition-colors">Home</a></li>
-                            <li><a href="/services" className="hover:text-[#C3B091] transition-colors">Services</a></li>
-                            <li><a href="/projects" className="hover:text-[#C3B091] transition-colors">Projects</a></li>
-                            <li><a href="/about" className="hover:text-[#C3B091] transition-colors">About Us</a></li>
-                            <li><a href="/contact" className="hover:text-[#C3B091] transition-colors">Contact Us</a></li>
+                            <li>
+                                <Link to="/" className="hover:text-[#C3B091] transition-colors">
+                                    Home
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/services" className="hover:text-[#C3B091] transition-colors">
+                                    Services
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/projects" className="hover:text-[#C3B091] transition-colors">
+                                    Projects
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/about" className="hover:text-[#C3B091] transition-colors">
+                                    About Us
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/contact" className="hover:text-[#C3B091] transition-colors">
+                                    Contact Us
+                                </Link>
+                            </li>
                         </ul>
                     </div>
 
-                    {/* Services */}
+                    {/* Services – use Link (hash still works) */}
                     <div className="lg:col-span-3">
                         <h3 className="text-white text-xl font-semibold mb-5">Our Services</h3>
                         <ul className="space-y-3 text-sm">
-                            <li><a href="/services#upvc-doors" className="hover:text-[#C3B091] transition-colors">UPVC Doors</a></li>
-                            <li><a href="/services#upvc-windows" className="hover:text-[#C3B091] transition-colors">UPVC Windows</a></li>
-                            <li><a href="/services#partition" className="hover:text-[#C3B091] transition-colors">Laser Cut Partitions</a></li>
-                            <li><a href="/services#kitchen" className="hover:text-[#C3B091] transition-colors">Kitchen Interiors</a></li>
-                            <li><a href="/services#commercial" className="hover:text-[#C3B091] transition-colors">Commercial Projects</a></li>
+                            <li>
+                                <Link to="/services#upvc-doors" className="hover:text-[#C3B091] transition-colors">
+                                    UPVC Doors
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/services#upvc-windows" className="hover:text-[#C3B091] transition-colors">
+                                    UPVC Windows
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/services#partition" className="hover:text-[#C3B091] transition-colors">
+                                    Laser Cut Partitions
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/services#kitchen" className="hover:text-[#C3B091] transition-colors">
+                                    Kitchen Interiors
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/services#commercial" className="hover:text-[#C3B091] transition-colors">
+                                    Commercial Projects
+                                </Link>
+                            </li>
                         </ul>
                     </div>
 
-                    {/* Contact Info */}
+                    {/* Contact Info – keep tel: / mailto: as <a> */}
                     <div className="lg:col-span-3">
                         <h3 className="text-white text-xl font-semibold mb-5">Contact Info</h3>
 
                         <div className="space-y-6 text-sm">
-                            {/* Address Section */}
                             <div className="flex gap-3">
                                 <MapPin size={18} className="mt-1 text-[#C3B091] flex-shrink-0" />
                                 <p className="text-gray-400 leading-relaxed">
@@ -99,19 +132,11 @@ const Footer = () => {
 
                             <div className="flex items-center gap-3">
                                 <Phone size={18} className="text-[#C3B091]" />
-
                                 <div className="flex flex-col">
-                                    <a
-                                        href="tel:+919363746459"
-                                        className="hover:text-white transition-colors"
-                                    >
+                                    <a href="tel:+919363746459" className="hover:text-white transition-colors">
                                         +91 93637 46459
                                     </a>
-
-                                    <a
-                                        href="tel:+919791746459"
-                                        className="hover:text-white transition-colors"
-                                    >
+                                    <a href="tel:+919791746459" className="hover:text-white transition-colors">
                                         +91 97917 46459
                                     </a>
                                 </div>
@@ -119,17 +144,20 @@ const Footer = () => {
 
                             <div className="flex items-center gap-3">
                                 <Mail size={18} className="text-[#C3B091]" />
-                                <a href="mailto:shivaminteriors005@gmail.com" className="hover:text-white transition-colors">
+                                <a
+                                    href="mailto:shivaminteriors005@gmail.com"
+                                    className="hover:text-white transition-colors"
+                                >
                                     shivaminteriors005@gmail.com
                                 </a>
                             </div>
+
                             <div className="flex items-center gap-3">
                                 <Clock size={18} className="text-[#C3B091]" />
                                 <span>Mon - Sun: 9:00 AM - 9:00 PM</span>
                             </div>
                         </div>
                     </div>
-
                 </div>
 
                 {/* Copyright */}

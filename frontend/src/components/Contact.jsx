@@ -10,6 +10,7 @@ const Contact = () => {
         message: ''
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [result, setResult] = useState(""); // success / error message
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -18,11 +19,35 @@ const Contact = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setIsSubmitting(true);
-        // Simulate API call
-        await new Promise(resolve => setTimeout(resolve, 1000));
-        alert("Thank you! Your message has been received. We'll contact you soon.");
-        setFormData({ name: '', phone: '', email: '', subject: '', message: '' });
-        setIsSubmitting(false);
+        setResult("");
+
+        const formDataToSend = new FormData(e.target);
+        formDataToSend.append("access_key", "b67347cf-7e33-4980-b3ff-c6649ebf0a14");
+        formDataToSend.append("from_name", "Shivam UPVC Interiors Website");
+        formDataToSend.append("subject", formData.subject || "New Enquiry from Website");
+
+        try {
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                body: formDataToSend
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+                setResult("success");
+                setFormData({ name: '', phone: '', email: '', subject: '', message: '' });
+                e.target.reset(); // also clear native form
+            } else {
+                setResult("error");
+                console.log("Error", data);
+            }
+        } catch (error) {
+            setResult("error");
+            console.log("Error", error);
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     const cities = [
@@ -104,8 +129,6 @@ const Contact = () => {
                                             ))}
                                         </div>
                                     </div>
-
-
                                 </div>
 
                                 <div className="mt-5 pt-4 border-t border-gray-100">
@@ -219,10 +242,22 @@ const Contact = () => {
                                         ></textarea>
                                     </div>
 
+                                    {/* Success / Error Message */}
+                                    {result === "success" && (
+                                        <div className="bg-green-50 text-green-700 px-4 py-3 rounded-xl text-sm text-center font-medium">
+                                            ✅ Thank you! Your message has been sent successfully. We'll contact you soon.
+                                        </div>
+                                    )}
+                                    {result === "error" && (
+                                        <div className="bg-red-50 text-red-700 px-4 py-3 rounded-xl text-sm text-center font-medium">
+                                            ❌ Something went wrong. Please try again or call us.
+                                        </div>
+                                    )}
+
                                     <button
                                         type="submit"
                                         disabled={isSubmitting}
-                                        className="w-full bg-[#C3B091] hover:bg-[#B49F7A] text-white font-semibold py-3 rounded-full transition-all duration-300 flex items-center justify-center gap-2 group"
+                                        className="w-full bg-[#C3B091] hover:bg-[#B49F7A] text-white font-semibold py-3 rounded-full transition-all duration-300 flex items-center justify-center gap-2 group disabled:opacity-70 disabled:cursor-not-allowed"
                                     >
                                         {isSubmitting ? (
                                             <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
@@ -266,53 +301,51 @@ const Contact = () => {
                         </div>
 
                         {/* Branch Details */}
-                        {/* Branch Details */}
-{branches.map((branch, idx) => (
-    <div 
-        key={idx} 
-        className="group bg-white rounded-3xl p-5 shadow-xl hover:shadow-2xl transition-all duration-300"
-    >
-        <div className="flex items-start gap-2">   {/* Balanced gap */}
-           <div className="-ml-2 p-1.5 bg-[#C3B091]/10 rounded-lg shrink-0">
-    <MapPin className="w-4 h-4 text-[#C3B091]" />
-</div>
+                        {branches.map((branch, idx) => (
+                            <div
+                                key={idx}
+                                className="group bg-white rounded-3xl p-5 shadow-xl hover:shadow-2xl transition-all duration-300"
+                            >
+                                <div className="flex items-start gap-2">
+                                    <div className="-ml-2 p-1.5 bg-[#C3B091]/10 rounded-lg shrink-0">
+                                        <MapPin className="w-4 h-4 text-[#C3B091]" />
+                                    </div>
 
-            <div className="flex-1 min-w-0">
-                <h4 className="font-bold text-gray-900 mb-2">
-                    {branch.name}
-                </h4>
+                                    <div className="flex-1 min-w-0">
+                                        <h4 className="font-bold text-gray-900 mb-2">
+                                            {branch.name}
+                                        </h4>
 
-                <p className="text-sm text-gray-600 leading-relaxed mb-3">
-                    {branch.address}
-                </p>
+                                        <p className="text-sm text-gray-600 leading-relaxed mb-3">
+                                            {branch.address}
+                                        </p>
 
-                <div className="space-y-2 text-sm">
-                    {branch.phone.map((number, index) => (
-                        <a
-                            key={index}
-                            href={`tel:${number.replace(/\s+/g, '')}`}
-                            className="flex items-center gap-2 text-[#C3B091] hover:underline"
-                        >
-                            <Phone className="w-4 h-4 shrink-0" />
-                            {number}
-                        </a>
-                    ))}
+                                        <div className="space-y-2 text-sm">
+                                            {branch.phone.map((number, index) => (
+                                                <a
+                                                    key={index}
+                                                    href={`tel:${number.replace(/\s+/g, '')}`}
+                                                    className="flex items-center gap-2 text-[#C3B091] hover:underline"
+                                                >
+                                                    <Phone className="w-4 h-4 shrink-0" />
+                                                    {number}
+                                                </a>
+                                            ))}
 
-                    {/* Fixed Email with Visible Icon */}
-                    <a
-                        href={`mailto:${branch.email}`}
-                        className="flex items-center gap-2 text-[#C3B091] hover:underline group-hover:text-[#B49F7A] transition-colors"
-                    >
-                        <Mail className="w-4 h-4 shrink-0 flex-none" />
-                        <span className="text-[13px] leading-tight font-medium break-all">
-                            shivaminteriors005@gmail.com
-                        </span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-))}
+                                            <a
+                                                href={`mailto:${branch.email}`}
+                                                className="flex items-center gap-2 text-[#C3B091] hover:underline group-hover:text-[#B49F7A] transition-colors"
+                                            >
+                                                <Mail className="w-4 h-4 shrink-0 flex-none" />
+                                                <span className="text-[13px] leading-tight font-medium break-all">
+                                                    shivaminteriors005@gmail.com
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
 
                         {/* Business Hours */}
                         <div className="bg-gray-900 rounded-3xl p-5 shadow-xl">
@@ -334,7 +367,7 @@ const Contact = () => {
                     </div>
                 </div>
 
-                {/* Map Section - Added at the bottom */}
+                {/* Map Section */}
                 <div className="mt-16">
                     <div className="flex items-center gap-3 mb-6">
                         <Navigation className="w-6 h-6 text-[#C3B091]" />
