@@ -4,7 +4,7 @@ import {
   Star, Quote, Calendar, MapPin, Phone, Mail, 
   ArrowRight, TrendingUp, CheckCircle
 } from 'lucide-react';
-
+import { Link } from "react-router-dom";
 // Custom Social Icons
 const InstagramIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -153,9 +153,7 @@ const AboutPage = () => {
                   Meet Our Team
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </button>
-                <button className="px-6 py-3 border border-black/20 rounded-full font-semibold hover:border-black/40 transition-all">
-                  View Portfolio
-                </button>
+               
               </div>
             </div>
             <div className="relative animate-in fade-in slide-in-from-right duration-700">
@@ -315,21 +313,7 @@ const AboutPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-black text-[#FDFCEB]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold mb-4">Ready to Transform Your Space?</h2>
-          <p className="text-lg opacity-80 mb-8 max-w-2xl mx-auto">Let's create something beautiful together. Start your design journey today.</p>
-          <div className="flex gap-4 justify-center flex-wrap">
-            <button className="px-8 py-3 bg-[#FDFCEB] text-black rounded-full font-semibold hover:bg-white/90 transition-all flex items-center gap-2 group">
-              Start a Project
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </button>
-            <button className="px-8 py-3 border border-[#FDFCEB]/30 rounded-full font-semibold hover:bg-white/10 transition-all">
-              Contact Us
-            </button>
-          </div>
-        </div>
-      </section>
+      <section className="py-24 bg-black text-[#FDFCEB]"> <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"> <h2 className="text-4xl font-bold mb-4"> Ready to Transform Your Space? </h2> <p className="text-lg opacity-80 mb-8 max-w-2xl mx-auto"> Let's create something beautiful together. Start your design journey today. </p> <div className="flex gap-4 justify-center flex-wrap"> <Link to="/contact" className="px-8 py-3 bg-[#FDFCEB] text-black rounded-full font-semibold hover:bg-white/90 transition-all flex items-center gap-2 group" > Start a Project <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" /> </Link> <Link to="/contact" className="px-8 py-3 border border-[#FDFCEB]/30 rounded-full font-semibold hover:bg-white/10 transition-all" > Contact Us </Link> </div> </div> </section>
 <div className="w-full h-2 bg-[#FDFCEB]"></div>
 
       <style jsx>{`

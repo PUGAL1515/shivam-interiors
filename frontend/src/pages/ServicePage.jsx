@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, X, ChevronLeft, ChevronRight, Sparkles, Star, Zap } from 'lucide-react';
-
+import { Link } from "react-router-dom";
 // Production Ready API URL
 const API_BASE_URL = import.meta.env.VITE_API_URL?.replace(/\/$/, '') || 'https://shivam-interiors.33threads.in';
 
@@ -115,7 +115,7 @@ const ServicePage = () => {
       </style>
 
       <div className="min-h-screen bg-gradient-to-br from-[#FDFCEB] via-[#F5F2E8] to-[#1A1A1A]">
-        
+
         {/* Hero Section */}
         <div className="relative overflow-hidden">
           <div className="absolute inset-0">
@@ -136,10 +136,10 @@ const ServicePage = () => {
                   <span className="text-[#C9A96E]">Space With Elegance</span>
                 </h1>
                 <p className="text-lg text-[#3A3A3A] leading-relaxed max-w-lg">
-                  Experience luxury redefined with our premium interior design services. 
+                  Experience luxury redefined with our premium interior design services.
                   From concept to completion, we bring your vision to life.
                 </p>
-                
+
                 <div className="grid grid-cols-4 gap-4 pt-4">
                   {stats.map((stat, idx) => (
                     <div key={idx} className="text-center">
@@ -185,17 +185,17 @@ const ServicePage = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {services.map((service) => {
                 const firstImage = service.images?.[0]?.image;
-                
+
                 return (
-                  <div 
+                  <div
                     key={service.id}
                     className="service-card group cursor-pointer"
                     onClick={() => openModal(service)}
                   >
                     <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all h-full flex flex-col">
                       <div className="relative h-56 overflow-hidden bg-gray-100">
-                        <img 
-                          src={firstImage || 'https://placehold.co/600x400/1f1f1f/C9A96E'} 
+                        <img
+                          src={firstImage || 'https://placehold.co/600x400/1f1f1f/C9A96E'}
                           alt={service.name}
                           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                         />
@@ -214,11 +214,11 @@ const ServicePage = () => {
                             <ArrowRight className="w-3 h-3 text-[#C9A96E] group-hover:text-white transition-colors" />
                           </div>
                         </div>
-                        
+
                         <p className="text-[#3A3A3A] text-sm leading-relaxed line-clamp-2 mb-3">
                           {service.long_description || service.description || "Premium interior design services tailored to your needs."}
                         </p>
-                        
+
                         {service.features && service.features.length > 0 && (
                           <div className="flex flex-wrap gap-2 mt-auto">
                             {service.features.slice(0, 3).map((feature, i) => (
@@ -247,7 +247,7 @@ const ServicePage = () => {
         <div className="relative py-16 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-r from-[#1A1A1A] to-[#2A2A2A]"></div>
           <div className="absolute inset-0 bg-[radial-gradient(#C9A96E_1px,transparent_1px)] bg-[length:40px_40px] opacity-10"></div>
-          
+
           <div className="relative max-w-7xl mx-auto px-6">
             <div className="grid lg:grid-cols-2 gap-10 items-center">
               <div>
@@ -261,12 +261,17 @@ const ServicePage = () => {
                 <p className="text-gray-300 text-base mb-6">
                   Book your free consultation today and get a personalized design proposal
                 </p>
-                <button className="bg-[#C9A96E] text-black px-6 py-3 rounded-full font-semibold hover:bg-white transition-all inline-flex items-center gap-2 group text-sm">
+
+                <Link
+                  to="/contact"
+                  className="bg-[#C9A96E] text-black px-6 py-3 rounded-full font-semibold hover:bg-white transition-all inline-flex items-center gap-2 group text-sm"
+                >
                   Get Free Quote
                   <Zap className="w-4 h-4 group-hover:rotate-12 transition-transform" />
-                </button>
+                </Link>
+
               </div>
-              
+
               <div className="grid grid-cols-2 gap-3">
                 <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center border border-white/20">
                   <div className="text-2xl mb-1">🎯</div>
@@ -303,12 +308,12 @@ const ServicePage = () => {
                   <X size={28} />
                 </button>
               </div>
-              
+
               <div className="relative rounded-xl overflow-hidden bg-black">
                 {modalImages.length > 0 ? (
-                  <img 
-                    src={modalImages[modalCurrentIndex]} 
-                    alt="" 
+                  <img
+                    src={modalImages[modalCurrentIndex]}
+                    alt=""
                     className="max-h-[70vh] w-full object-contain"
                   />
                 ) : (
@@ -317,14 +322,14 @@ const ServicePage = () => {
 
                 {modalImages.length > 1 && (
                   <>
-                    <button 
-                      onClick={() => setModalCurrentIndex((p) => (p - 1 + modalImages.length) % modalImages.length)} 
+                    <button
+                      onClick={() => setModalCurrentIndex((p) => (p - 1 + modalImages.length) % modalImages.length)}
                       className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-[#C9A96E] text-white p-3 rounded-full transition-all"
                     >
                       <ChevronLeft size={24} />
                     </button>
-                    <button 
-                      onClick={() => setModalCurrentIndex((p) => (p + 1) % modalImages.length)} 
+                    <button
+                      onClick={() => setModalCurrentIndex((p) => (p + 1) % modalImages.length)}
                       className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-[#C9A96E] text-white p-3 rounded-full transition-all"
                     >
                       <ChevronRight size={24} />
