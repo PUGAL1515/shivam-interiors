@@ -7,7 +7,7 @@ import Services from "./Services";
 import WhoWeAre from "./WhoWeAre";
 import Stats from './Stats';
 import MaterialsWeUse from './MaterialsWeUse';
-// import ServiceAreas from './ServiceAreas';   // ← New Import
+import ServiceAreas from './ServiceAreas';   // ← New Import
 
 const Home = () => {
   return (
@@ -20,7 +20,7 @@ const Home = () => {
       <WhoWeAre />
       <Stats />
       <MaterialsWeUse />
-      {/* <ServiceAreas />    */}
+      <ServiceAreas />   
     </>
   );
 };
